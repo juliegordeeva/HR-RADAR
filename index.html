@@ -268,6 +268,75 @@
   .cta-section h2 { max-width: 600px; margin: 0 auto 20px; }
   .cta-section .lead { margin: 0 auto 40px; text-align: center; }
   .cta-section .cta-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .lead-form {
+    max-width: 480px;
+    margin: 0 auto;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .lead-form input[type="text"],
+  .lead-form input[type="tel"],
+  .lead-form input[type="email"] {
+    width: 100%;
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    padding: 14px 16px;
+    border: 1.5px solid var(--border);
+    border-radius: 2px;
+    color: var(--ink);
+    background: var(--white);
+    transition: border-color .2s;
+  }
+  .lead-form input[type="text"]:focus,
+  .lead-form input[type="tel"]:focus,
+  .lead-form input[type="email"]:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+  .lead-form label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--slate);
+    cursor: pointer;
+  }
+  .lead-form label input[type="checkbox"] {
+    flex-shrink: 0;
+    margin-top: 3px;
+    accent-color: var(--accent);
+  }
+  .lead-form label a {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+  .lead-form label a:hover { color: var(--accent-light); }
+  .lead-form button[type="submit"] {
+    background: var(--accent);
+    color: var(--white);
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background .2s;
+    margin-top: 8px;
+    width: 100%;
+  }
+  .lead-form button[type="submit"]:hover { background: var(--accent-light); }
+  #mailto-hint {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--slate);
+    text-align: center;
+    margin-top: 4px;
+  }
   .btn-dark {
     background: var(--ink); color: var(--white);
     font-size: 14px; font-weight: 700;
@@ -650,10 +719,28 @@
   <div class="section-label" style="text-align: center;">Следующий шаг</div>
   <h2>Выращивайте архитекторов<br>HR внутри компании</h2>
   <p class="lead">Выберите формат: выездная лаборатория для быстрой трансформации или онлайн-программа для глубокой перестройки компетенций.</p>
-  <div class="cta-group">
-    <a href="mailto:info@example.com" class="btn-primary">Заявка на выездную лабораторию</a>
-    <a href="mailto:info@example.com" class="btn-dark">Онлайн-программа — 4 месяца</a>
-  </div>
+  <form id="leadForm" class="lead-form">
+    <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+    <input type="tel" id="phone" name="phone" placeholder="Телефон" required>
+    <input type="email" id="email" name="email" placeholder="Email" required>
+
+    <label>
+      <input type="checkbox" id="consent-pd" required>
+      Даю согласие на обработку персональных данных в соответствии с
+      <a href="consent.html" target="_blank">Согласием на обработку персональных данных</a>
+      и <a href="privacy-policy.html" target="_blank">Политикой обработки персональных данных</a>
+    </label>
+
+    <label>
+      <input type="checkbox" id="consent-news">
+      Хочу получать новости и специальные предложения
+    </label>
+
+    <button type="submit" class="btn-primary">Оставить заявку</button>
+    <p id="mailto-hint" style="display:none;">
+      Сейчас откроется ваша почтовая программа с готовым письмом — нажмите «Отправить», чтобы мы получили заявку.
+    </p>
+  </form>
 </section>
 
 <!-- FOOTER -->
@@ -669,6 +756,34 @@
     document.getElementById('tab-' + tabId).classList.add('active');
     event.target.classList.add('active');
   }
+
+  document.getElementById('leadForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const consentPD = document.getElementById('consent-pd').checked;
+    const consentNews = document.getElementById('consent-news').checked;
+
+    if (!consentPD) {
+      alert('Пожалуйста, подтвердите согласие на обработку персональных данных.');
+      return;
+    }
+
+    const subject = encodeURIComponent('Заявка с сайта radarexec.ru');
+    const body = encodeURIComponent(
+      'Имя: ' + name + '\n' +
+      'Телефон: ' + phone + '\n' +
+      'Email: ' + email + '\n' +
+      'Согласие на рассылку: ' + (consentNews ? 'да' : 'нет') + '\n' +
+      'Дата: ' + new Date().toLocaleString('ru-RU')
+    );
+
+    window.location.href = 'mailto:prof@jgordeeva.ru?subject=' + subject + '&body=' + body;
+
+    document.getElementById('mailto-hint').style.display = 'block';
+  });
 </script>
 </body>
 </html>
