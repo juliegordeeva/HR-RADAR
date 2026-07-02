@@ -244,6 +244,112 @@
   }
   .audience-item span { font-size: 14px; font-weight: 500; color: var(--ink); }
 
+  /* ── MISSION ── */
+  .mission-section { background: var(--ink); color: var(--white); }
+  .mission-section h2 { color: var(--white); }
+  .mission-section .lead { color: rgba(255,255,255,0.65); max-width: 720px; }
+  .mission-bullets {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    margin: 48px 0 40px;
+  }
+  .mission-bullet {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px; padding: 28px;
+  }
+  .mission-bullet h4 { font-size: 15px; font-weight: 700; color: var(--gold); margin-bottom: 10px; }
+  .mission-bullet p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.6; }
+  .mission-closing {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(18px, 2.2vw, 24px); font-weight: 700;
+    color: var(--accent); max-width: 640px; line-height: 1.4;
+  }
+
+  /* ── CONTACTS ── */
+  .contact-cards {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+    max-width: 720px; margin: 0 auto 48px; text-align: left;
+  }
+  .contact-card {
+    background: var(--mist); border-radius: 4px; padding: 28px;
+    border-top: 3px solid var(--accent);
+  }
+  .contact-card .contact-role { font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: .06em; margin-bottom: 4px; }
+  .contact-card h4 { font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 16px; }
+  .contact-card a, .contact-card p { font-size: 14px; color: var(--slate); line-height: 1.8; text-decoration: none; display: block; }
+  .contact-card a:hover { color: var(--accent); }
+
+  /* ── EXPERTS ── */
+  .experts-section { background: var(--mist); }
+  .experts-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+    margin-top: 8px;
+  }
+  .expert-card {
+    background: var(--white); border-radius: 4px; overflow: hidden;
+    border-top: 3px solid var(--accent);
+    display: flex; flex-direction: column;
+  }
+  .expert-photo-wrap {
+    width: 100%; aspect-ratio: 4 / 5; overflow: hidden;
+    background: var(--ink-soft);
+  }
+  .expert-photo {
+    width: 100%; height: 100%; object-fit: cover; object-position: center top;
+    display: block;
+  }
+  .expert-photo-placeholder {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 64px; font-weight: 900; color: rgba(255,255,255,0.25);
+    background: linear-gradient(135deg, var(--ink) 0%, var(--ink-soft) 100%);
+  }
+  .expert-body { padding: 28px 28px 32px; flex: 1; display: flex; flex-direction: column; }
+  .expert-role { font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: .06em; margin-bottom: 6px; }
+  .expert-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px; font-weight: 900; color: var(--ink);
+    margin-bottom: 10px; line-height: 1.2;
+  }
+  .expert-hook {
+    font-size: 13px; font-weight: 600; color: var(--slate);
+    line-height: 1.5; margin-bottom: 20px; padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .expert-bullets {
+    list-style: none; margin: 0 0 20px; display: flex; flex-direction: column; gap: 10px;
+  }
+  .expert-bullets li {
+    font-size: 13px; line-height: 1.55; color: var(--slate);
+    padding-left: 16px; position: relative;
+  }
+  .expert-bullets li::before {
+    content: ''; position: absolute; left: 0; top: 8px;
+    width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+  }
+  .expert-award {
+    font-size: 12px; line-height: 1.55; color: var(--ink);
+    background: var(--mist); border-radius: 4px; padding: 14px 16px;
+    margin-bottom: 16px; margin-top: auto;
+  }
+  .expert-contacts { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
+  .expert-contacts a, .expert-contacts span {
+    font-size: 13px; color: var(--slate); text-decoration: none; line-height: 1.5;
+  }
+  .expert-contacts a:hover { color: var(--accent); }
+  .expert-more {
+    font-size: 13px; font-weight: 600; color: var(--accent); text-decoration: none;
+  }
+  .expert-more:hover { color: var(--accent-light); }
+  .mission-bridge {
+    margin-top: 32px; padding: 24px 28px;
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 4px; border-left: 4px solid var(--gold);
+    font-size: 15px; line-height: 1.7; color: rgba(255,255,255,0.7); max-width: 720px;
+  }
+  .mission-bridge a { color: var(--gold); font-weight: 600; text-decoration: none; }
+  .mission-bridge a:hover { color: var(--white); }
+
   /* ── QUOTE ── */
   .quote-section {
     background: var(--ink); padding: 80px 48px; text-align: center;
@@ -349,11 +455,14 @@
   /* ── FOOTER ── */
   footer {
     background: var(--ink); padding: 40px 48px;
-    display: flex; justify-content: space-between; align-items: center;
+    display: flex; flex-direction: column; gap: 16px;
+    align-items: center; text-align: center;
     border-top: 1px solid rgba(255,255,255,0.08);
   }
+  .footer-top { display: flex; justify-content: space-between; align-items: center; width: 100%; }
   footer .footer-brand { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.4); letter-spacing: .14em; text-transform: uppercase; }
   footer .footer-tagline { font-size: 12px; color: rgba(255,255,255,0.3); }
+  .footer-legal { font-size: 11px; color: rgba(255,255,255,0.25); line-height: 1.6; }
 
   /* ── DIVIDER ── */
   .divider { height: 1px; background: var(--border); margin: 0 48px; }
@@ -372,9 +481,13 @@
     .modules-grid { grid-template-columns: 1fr; }
     .artifacts-grid { grid-template-columns: 1fr; }
     .for-whom { grid-template-columns: 1fr; gap: 40px; }
+    .mission-bullets { grid-template-columns: 1fr; }
+    .contact-cards { grid-template-columns: 1fr; }
+    .experts-grid { grid-template-columns: 1fr; }
     .quote-section { padding: 60px 24px; }
     .cta-section { padding: 60px 24px; }
-    footer { flex-direction: column; gap: 12px; text-align: center; padding: 32px 24px; }
+    .footer-top { flex-direction: column; gap: 12px; text-align: center; }
+    footer { padding: 32px 24px; }
     .divider { margin: 0 24px; }
   }
 </style>
@@ -390,6 +503,8 @@
     <li><a href="#formats">Форматы</a></li>
     <li><a href="#artifacts">Результаты</a></li>
     <li><a href="#audience">Для кого</a></li>
+    <li><a href="#mission">Миссия</a></li>
+    <li><a href="#experts">Команда</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Оставить заявку</a>
 </nav>
@@ -412,7 +527,7 @@
     </div>
     <div class="hero-stats-row">
       <div class="hero-stat-small">
-        <div class="big">5</div>
+        <div class="big">6</div>
         <div class="label">практических контуров программы</div>
       </div>
       <div class="hero-stat-small">
@@ -420,7 +535,7 @@
         <div class="label">дней выездной лаборатории</div>
       </div>
       <div class="hero-stat-small">
-        <div class="big">12</div>
+        <div class="big">13</div>
         <div class="label">модулей онлайн-программы</div>
       </div>
       <div class="hero-stat-small">
@@ -469,8 +584,8 @@
   <div class="solution">
     <div class="solution-intro">
       <div class="section-label">Архитектура программы</div>
-      <h2>Пять контуров нового HR</h2>
-      <p class="lead" style="margin-bottom: 0;">Программа строится вокруг пяти практических контуров. Каждый — это реальные навыки, применимые с первого дня после обучения.</p>
+      <h2>Шесть контуров нового HR</h2>
+      <p class="lead" style="margin-bottom: 0;">Программа строится вокруг шести практических контуров. Каждый — это реальные навыки, применимые с первого дня после обучения.</p>
 
       <div style="margin-top: 40px; padding: 28px; background: var(--mist); border-radius: 4px; border-left: 4px solid var(--accent);">
         <div style="font-size: 13px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 12px;">Ключевое преимущество</div>
@@ -503,15 +618,22 @@
       <div class="contour-item">
         <div class="contour-num">4</div>
         <div class="contour-text">
-          <h4>Инклюзия, СВО-интеграция и ESG</h4>
-          <p>Организация инклюзивного рабочего пространства, интеграция вернувшихся с СВО, взаимодействие с органами власти и центрами занятости. ESG как система социальных и кадровых метрик.</p>
+          <h4>Разумное и ответственное использование ИИ</h4>
+          <p>Применение ИИ-инструментов в подборе, адаптации, аналитике и генерации документов — и понимание границ: где алгоритм ошибается, где нарушается приватность данных, где решение должно оставаться за человеком. HR как ответственный заказчик и контролёр ИИ-решений, а не пассивный пользователь.</p>
         </div>
       </div>
       <div class="contour-item">
         <div class="contour-num">5</div>
         <div class="contour-text">
+          <h4>Инклюзия, СВО-интеграция и ESG</h4>
+          <p>Организация инклюзивного рабочего пространства, интеграция вернувшихся с СВО, взаимодействие с органами власти и центрами занятости. ESG как система социальных и кадровых метрик, а также выстраивание профессионального взаимодействия с органами власти как отдельная зона ответственности современного HR.</p>
+        </div>
+      </div>
+      <div class="contour-item">
+        <div class="contour-num">6</div>
+        <div class="contour-text">
           <h4>Knowledge Management</h4>
-          <p>Карта критических знаний, база знаний для адаптации и руководителей, наставничество, передача экспертизы. Архитектура корпоративной базы знаний — как итоговый артефакт.</p>
+          <p>Карта критических знаний, база знаний для адаптации и руководителей, наставничество, передача экспертизы. Внутреннее наставничество и модель «лидеры учат лидеров» как механизм передачи экспертизы внутри компании, снижающий риск потери знаний при уходе ключевых сотрудников. Архитектура корпоративной базы знаний — как итоговый артефакт.</p>
         </div>
       </div>
     </div>
@@ -568,8 +690,8 @@
         </div>
         <div class="day-card">
           <div class="day-num">День 3</div>
-          <h5>Автоматизация и импортозамещение</h5>
-          <p>Выбор процесса, описание целевого состояния, подготовка требований к сервису, сборка backlog.</p>
+          <h5>Автоматизация, импортозамещение и ИИ в HR</h5>
+          <p>Выбор процесса, описание целевого состояния, подготовка требований к сервису, сборка backlog. Практика: где в HR-процессах уместен ИИ (скрининг резюме, чат-боты адаптации, генерация первичных документов), а где нужен человеческий контроль. Оценка рисков алгоритмической предвзятости.</p>
           <div class="artifact">▸ Мини-ТЗ на автоматизацию HR-сервиса</div>
         </div>
         <div class="day-card">
@@ -581,7 +703,7 @@
         <div class="day-card">
           <div class="day-num">День 5</div>
           <h5>Knowledge Management</h5>
-          <p>Карта критических знаний, структура базы, первые разделы, модель ответственности за обновление.</p>
+          <p>Карта критических знаний, структура базы, первые разделы, модель ответственности за обновление. Внутреннее наставничество и модель «лидеры учат лидеров».</p>
           <div class="artifact">▸ Архитектура корпоративной базы знаний</div>
         </div>
         <div class="day-card">
@@ -616,7 +738,7 @@
       </div>
       <div class="phase-card">
         <div class="phase-tag">Структура</div>
-        <h4>12 модулей</h4>
+        <h4>13 модулей</h4>
         <p>Домашние задания на реальных процессах компании. Шаблоны документов и финальная защита проекта.</p>
       </div>
       <div class="phase-card">
@@ -630,15 +752,16 @@
       <div class="module-card"><div class="mod-num">МОДУЛЬ 01</div><h5>Почему старый HR не работает</h5><p>Роль HR в 2026 году. Почему КДП недостаточно. Личная карта профессионального перехода.</p></div>
       <div class="module-card"><div class="mod-num">МОДУЛЬ 02</div><h5>Управленческий контур компании</h5><p>Как принимаются решения. Язык рисков, целей, ресурсов. Шаблон HR-предложения для руководства.</p></div>
       <div class="module-card"><div class="mod-num">МОДУЛЬ 03</div><h5>Диагностика HR-процессов</h5><p>Как описывать процессы, где возникают потери. Почему нельзя автоматизировать хаос.</p></div>
-      <div class="module-card"><div class="mod-num">МОДУЛЬ 04</div><h5>Автоматизация HR</h5><p>Что автоматизировать в первую очередь. Backlog автоматизации. HR как заказчик цифровых решений.</p></div>
+      <div class="module-card"><div class="mod-num">МОДУЛЬ 04</div><h5>Автоматизация HR и ИИ</h5><p>Что автоматизировать в первую очередь. Backlog автоматизации. HR как заказчик цифровых решений. Возможности и границы применения ИИ в подборе, адаптации, кадровом делопроизводстве и аналитике. Риски: предвзятость алгоритмов, утечка персональных данных, ответственность за автоматизированные решения. Чек-лист ответственного внедрения ИИ-инструментов.</p></div>
       <div class="module-card"><div class="mod-num">МОДУЛЬ 05</div><h5>Импортозамещение HR-сервисов</h5><p>Замена сервисов аналитики, подбора, обучения. Описание требований, сравнение решений, снижение сопротивления.</p></div>
       <div class="module-card"><div class="mod-num">МОДУЛЬ 06</div><h5>HR-аналитика без страха</h5><p>Показатели для руководства. Простой HR-дашборд. Прозрачность HR-решений.</p></div>
       <div class="module-card"><div class="mod-num">МОДУЛЬ 07</div><h5>Мотивация, вовлечённость, удержание</h5><p>Прозрачные показатели мотивации. Карта факторов удержания и связь с руководителем.</p></div>
-      <div class="module-card"><div class="mod-num">МОДУЛЬ 08</div><h5>Knowledge Management</h5><p>Корпоративная база знаний, сохранение экспертизы, связь с адаптацией и кадровым резервом.</p></div>
+      <div class="module-card"><div class="mod-num">МОДУЛЬ 08</div><h5>Knowledge Management</h5><p>Корпоративная база знаний, сохранение экспертизы, связь с адаптацией и кадровым резервом. Внутреннее наставничество и модель «лидеры учат лидеров» как механизм передачи экспертизы внутри компании, снижающий риск потери знаний при уходе ключевых сотрудников.</p></div>
       <div class="module-card"><div class="mod-num">МОДУЛЬ 09</div><h5>HR как агент изменений</h5><p>Работа с сопротивлением. Запуск пилотов. Обучение пользователей. Сопровождение внедрения.</p></div>
       <div class="module-card"><div class="mod-num">МОДУЛЬ 10</div><h5>Инклюзивное рабочее пространство</h5><p>Аудит пространства, коммуникаций и цифровой среды. Чек-лист инклюзивного рабочего пространства.</p></div>
       <div class="module-card"><div class="mod-num">МОДУЛЬ 11</div><h5>Интеграция вернувшихся с СВО</h5><p>Маршрут интеграции. Риски стигматизации. Взаимодействие с внешними партнёрами.</p></div>
-      <div class="module-card" style="border-color: rgba(212,168,67,0.4); background: rgba(212,168,67,0.08);"><div class="mod-num" style="color: var(--gold);">МОДУЛЬ 12</div><h5>ESG и GR для HR</h5><p>ESG как социально-управленческая рамка. Работа с органами власти. Паспорт ESG/GR-проекта.</p></div>
+      <div class="module-card" style="border-color: rgba(212,168,67,0.4); background: rgba(212,168,67,0.08);"><div class="mod-num" style="color: var(--gold);">МОДУЛЬ 12</div><h5>ESG для HR</h5><p>ESG как социально-управленческая рамка. Социальные и кадровые метрики. Паспорт ESG-проекта как итоговый артефакт.</p></div>
+      <div class="module-card" style="border-color: rgba(212,168,67,0.4); background: rgba(212,168,67,0.08);"><div class="mod-num" style="color: var(--gold);">МОДУЛЬ 13</div><h5>Взаимодействие с органами власти (GR)</h5><p>Формирование профессиональных компетенций для работы с органами государственной власти РФ: коммуникация с центрами занятости, участие в программах государственной поддержки занятости, кадровая отчётность перед госорганами, работа с региональными органами труда и социальной защиты. Паспорт GR-проекта как итоговый артефакт.</p></div>
     </div>
   </div>
 </section>
@@ -675,6 +798,16 @@
       <p>Пошаговый план трансформации HR-функции с учётом социальных, кадровых и репутационных метрик.</p>
     </div>
     <div class="artifact-card">
+      <div class="icon">🏛️</div>
+      <h4>Паспорт GR-проекта</h4>
+      <p>Стратегия взаимодействия с органами власти: центры занятости, программы господдержки, кадровая отчётность.</p>
+    </div>
+    <div class="artifact-card">
+      <div class="icon">🎓</div>
+      <h4>Система наставничества</h4>
+      <p>Работающая модель передачи экспертизы «лидеры учат лидеров» и профессиональная дорожная карта роста сотрудника внутри компании.</p>
+    </div>
+    <div class="artifact-card">
       <div class="icon">🗺️</div>
       <h4>Дорожная карта на 90 дней</h4>
       <p>Конкретный план изменений с защитой перед руководством: что, зачем, сколько стоит, какой эффект.</p>
@@ -700,8 +833,89 @@
         <div class="audience-item"><span>Корпоративные университеты</span></div>
         <div class="audience-item"><span>Проектные команды по инклюзии и интеграции</span></div>
         <div class="audience-item"><span>Работодатели, которым нужно быстро усилить HR-функцию</span></div>
+        <div class="audience-item"><span>Женщины в регионах, ищущие смену профессии</span></div>
+        <div class="audience-item"><span>Соискатели без опыта в HR, готовые войти в профессию через аналитику и цифровые инструменты</span></div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="mission-section" id="mission">
+  <div class="section-label">Социальная миссия</div>
+  <h2>Другой выбор для женщин в регионах</h2>
+  <p class="lead">Профессия HR и рекрутинг — один из немногих карьерных путей с низким порогом входа и высоким спросом на рынке труда. Не требует профильного диплома, стартует с базовых аналитических и цифровых навыков — и открывает совершенно другой уровень возможностей, чем работа продавщицей в магазине или оператором пункта выдачи заказов.</p>
+  <div class="mission-bullets">
+    <div class="mission-bullet">
+      <h4>Низкий порог входа, высокий потолок роста</h4>
+      <p>От рекрутера до HR-бизнес-партнёра и HRD.</p>
+    </div>
+    <div class="mission-bullet">
+      <h4>Цифровые и аналитические навыки</h4>
+      <p>Работа с дашбордами, ИИ-инструментами и HR-системами, а не только с бумажными анкетами.</p>
+    </div>
+    <div class="mission-bullet">
+      <h4>Гибкость и удалённость</h4>
+      <p>Многие HR-задачи (аналитика, подбор, коммуникации) можно выполнять удалённо, что расширяет географию трудоустройства для женщин в регионах.</p>
+    </div>
+  </div>
+  <p class="mission-closing">Наша социальная миссия — расширить горизонт выбора профессии для женщин в регионах России.</p>
+  <p class="mission-bridge">Команда проекта уже имеет практический опыт карьерной поддержки уязвимых групп — от партнёрств с центрами занятости до карьерных интенсивов для слушателей с ОВЗ. <a href="#expert-lada">Подробнее о команде →</a></p>
+</section>
+
+<!-- EXPERTS -->
+<section class="experts-section" id="experts">
+  <div class="section-label">Экспертиза и команда</div>
+  <h2>Кто стоит за программой</h2>
+  <p class="lead">Практики с опытом в HR, бизнес-образовании, работе с госсектором и социальными проектами — не теоретики, а те, кто уже реализовывал подобные задачи.</p>
+
+  <div class="experts-grid">
+    <article class="expert-card" id="expert-julia">
+      <div class="expert-photo-wrap">
+        <img class="expert-photo" src="assets/images/gordeeva.jpg" alt="Юлия Гордеева — спикер и идейный вдохновитель программы">
+      </div>
+      <div class="expert-body">
+        <div class="expert-role">Спикер, идейный вдохновитель</div>
+        <h3>Юлия Гордеева</h3>
+        <p class="expert-hook">15+ лет в бизнес-образовании · 60+ корпоративных программ · Россия, Европа, Азия, MENA</p>
+        <ul class="expert-bullets">
+          <li>Преподавала HR и организационное поведение в Президентской программе подготовки управленческих кадров и на MBA в РЭУ им. Г.В. Плеханова (2008–2022)</li>
+          <li>Разрабатывает и ведёт авторские программы для бизнеса совместно с РАНХиГС, РУДН, Финансовым университетом при Правительстве РФ</li>
+          <li>С 2022 года консультирует и обучает на международных проектах — российских, азиатских и MENA</li>
+          <li>Сертифицированный коуч ICF, ментор MBA-программ</li>
+        </ul>
+        <p class="expert-award">🏆 Победитель Всероссийского конкурса бизнес-школ «Лучшие практики управленческого образования 2024»</p>
+        <div class="expert-contacts">
+          <a href="mailto:prof@jgordeeva.ru">📧 prof@jgordeeva.ru</a>
+          <span>📱 +7 (916) 637-49-86</span>
+          <a href="https://t.me/Prof_jouls" target="_blank" rel="noopener">✈️ Telegram: @Prof_jouls</a>
+        </div>
+        <a class="expert-more" href="https://radarexec.ru" target="_blank" rel="noopener">Подробнее об опыте →</a>
+      </div>
+    </article>
+
+    <article class="expert-card" id="expert-lada">
+      <div class="expert-photo-wrap">
+        <img class="expert-photo" src="assets/images/kuzminskaya.jpg" alt="Лада Кузминская — директор по развитию программы">
+      </div>
+      <div class="expert-body">
+        <div class="expert-role">Директор по развитию</div>
+        <h3>Лада Кузминская</h3>
+        <p class="expert-hook">12+ лет в управлении образовательными проектами · 150+ реализованных программ</p>
+        <ul class="expert-bullets">
+          <li>Руководила портфелем из 150+ образовательных программ (MBA, профпереподготовка) в АНО ДПО «Московская Бизнес Академия»</li>
+          <li>Выстраивала партнёрства с государственным сектором: Центр занятости населения Москвы, Всероссийская ярмарка вакансий, карьерные интенсивы для слушателей с ОВЗ</li>
+          <li>Реализовала госконтракты и тендеры (включая программу GenerationS с РВК) на сумму более 24 млн руб.</li>
+          <li>MBA, Moscow Business School</li>
+        </ul>
+        <p class="expert-award">🏆 2024 — победитель конкурса «Лучшие практики управленческого образования» (совместно с Ю. Гордеевой)</p>
+        <div class="expert-contacts">
+          <a href="mailto:ladlena_k@mail.ru">📧 ladlena_k@mail.ru</a>
+          <span>📱 +7 (909) 912-27-25</span>
+          <a href="https://t.me/LadaLLK" target="_blank" rel="noopener">✈️ Telegram: LadaLLK</a>
+        </div>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -719,6 +933,12 @@
   <div class="section-label" style="text-align: center;">Следующий шаг</div>
   <h2>Выращивайте архитекторов<br>HR внутри компании</h2>
   <p class="lead">Выберите формат: выездная лаборатория для быстрой трансформации или онлайн-программа для глубокой перестройки компетенций.</p>
+
+  <div class="cta-group" style="margin-bottom: 40px;">
+    <a href="mailto:prof@jgordeeva.ru?subject=%D0%97%D0%B0%D1%8F%D0%B2%D0%BA%D0%B0%20%D0%BD%D0%B0%20%D0%B2%D1%8B%D0%B5%D0%B7%D0%B4%D0%BD%D1%83%D1%8E%20%D0%BB%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%B8%D1%8E" class="btn-primary">Заявка на выездную лабораторию</a>
+    <a href="mailto:ladlena_k@mail.ru?subject=%D0%9E%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0%20%E2%80%94%204%20%D0%BC%D0%B5%D1%81%D1%8F%D1%86%D0%B0" class="btn-dark">Онлайн-программа — 4 месяца</a>
+  </div>
+
   <form id="leadForm" class="lead-form">
     <input type="text" id="name" name="name" placeholder="Ваше имя" required>
     <input type="tel" id="phone" name="phone" placeholder="Телефон" required>
@@ -745,8 +965,13 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-brand">HR — Новый Контур · 2026</div>
-  <div class="footer-tagline">Переход от кадрового оформления к управленческой архитектуре</div>
+  <div class="footer-top">
+    <div class="footer-brand">HR — Новый Контур · 2026</div>
+    <div class="footer-tagline">Переход от кадрового оформления к управленческой архитектуре</div>
+  </div>
+  <div class="footer-legal">
+    ИП Гордеева Юлия Владимировна · ОГРНИП 319774600004492 · ИНН 501304589898
+  </div>
 </footer>
 
 <script>
