@@ -52,6 +52,11 @@
     text-decoration: none; transition: background .2s;
   }
   .nav-cta:hover { background: var(--accent); }
+  .nav-actions { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
+  .lang-switch { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; letter-spacing: .06em; }
+  .lang-switch__link { color: var(--slate); text-decoration: none; transition: color .2s; }
+  .lang-switch__link:hover, .lang-switch__link--active { color: var(--accent); }
+  .lang-switch__sep { color: var(--border); font-weight: 400; }
 
   /* ── HERO ── */
   .hero {
@@ -558,6 +563,7 @@
   @media (max-width: 900px) {
     nav { padding: 16px 24px; }
     .nav-links { display: none; }
+    .lang-switch { display: none; }
     section { padding: 60px 24px; }
     .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; }
     .hero-right { display: none; }
@@ -593,7 +599,14 @@
     <li><a href="#mission">Миссия</a></li>
     <li><a href="#experts">Команда</a></li>
   </ul>
-  <a href="mailto:prof@jgordeeva.ru?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20radarexec.ru" class="nav-cta" title="Откроется ваша почтовая программа с готовым письмом">Оставить заявку</a>
+  <div class="nav-actions">
+    <div class="lang-switch">
+      <a href="index.html" class="lang-switch__link lang-switch__link--active" hreflang="ru" aria-current="true">RU</a>
+      <span class="lang-switch__sep">|</span>
+      <a href="en/index.html" class="lang-switch__link" hreflang="en">EN</a>
+    </div>
+    <a href="mailto:prof@jgordeeva.ru?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20radarexec.ru" class="nav-cta" title="Откроется ваша почтовая программа с готовым письмом">Оставить заявку</a>
+  </div>
 </nav>
 
 <!-- HERO -->
