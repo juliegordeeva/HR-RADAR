@@ -209,6 +209,27 @@
 
   /* ── PAIN ── */
   .pain { background: var(--mist); }
+  .pain-funnel {
+    max-width: 960px;
+    margin: 0 auto 48px;
+  }
+  .pain-funnel svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .pain-funnel__label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    fill: var(--slate);
+  }
+  .pain-funnel__outcome {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    fill: #FFFFFF;
+  }
   .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .pain-card {
     background: var(--white);
@@ -572,6 +593,7 @@
     .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; }
     .hero-right { display: none; }
     .pain-grid { grid-template-columns: 1fr; }
+    .pain-funnel { margin-bottom: 32px; }
     .solution { grid-template-columns: 1fr; gap: 40px; }
     .lab-phases { grid-template-columns: 1fr; }
     .days-grid { grid-template-columns: repeat(2, 1fr); }
@@ -659,6 +681,50 @@
   <div class="section-label">Диагностика рынка</div>
   <h2>5 болей, которые<br>разрушают HR-функцию</h2>
   <p class="lead">Бизнес ожидает управленческого партнёра. Рынок предлагает кадровых оформителей. Это расстояние и есть точка входа программы.</p>
+
+  <div class="pain-funnel">
+    <svg viewBox="0 0 960 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Схема: пять болей HR сходятся к отделу оформления">
+      <defs>
+        <linearGradient id="painFunnelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#C84B31" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#C84B31" stop-opacity="0.08"/>
+        </linearGradient>
+      </defs>
+      <path d="M100,72 L480,168 L860,72" fill="url(#painFunnelGrad)" stroke="none"/>
+      <path d="M100,72 L480,168" fill="none" stroke="#C84B31" stroke-width="1.5" stroke-opacity="0.45"/>
+      <path d="M280,72 L480,168" fill="none" stroke="#C84B31" stroke-width="1.5" stroke-opacity="0.45"/>
+      <path d="M480,72 L480,168" fill="none" stroke="#C84B31" stroke-width="1.5" stroke-opacity="0.55"/>
+      <path d="M680,72 L480,168" fill="none" stroke="#C84B31" stroke-width="1.5" stroke-opacity="0.45"/>
+      <path d="M860,72 L480,168" fill="none" stroke="#C84B31" stroke-width="1.5" stroke-opacity="0.45"/>
+      <path d="M480,168 L480,214" fill="none" stroke="#D4A843" stroke-width="2"/>
+
+      <rect x="20" y="16" width="160" height="56" rx="4" fill="#FFFFFF" stroke="#C84B31" stroke-width="1.5"/>
+      <rect x="20" y="16" width="160" height="4" rx="2" fill="#C84B31"/>
+      <text x="100" y="50" text-anchor="middle" class="pain-funnel__label">Нехватка HR</text>
+
+      <rect x="200" y="16" width="160" height="56" rx="4" fill="#FFFFFF" stroke="#C84B31" stroke-width="1.5"/>
+      <rect x="200" y="16" width="160" height="4" rx="2" fill="#C84B31"/>
+      <text x="280" y="50" text-anchor="middle" class="pain-funnel__label">Провал аналитики</text>
+
+      <rect x="400" y="16" width="160" height="56" rx="4" fill="#FFFFFF" stroke="#C84B31" stroke-width="1.5"/>
+      <rect x="400" y="16" width="160" height="4" rx="2" fill="#C84B31"/>
+      <text x="480" y="50" text-anchor="middle" class="pain-funnel__label">Импортозамещение</text>
+
+      <rect x="600" y="16" width="160" height="56" rx="4" fill="#FFFFFF" stroke="#C84B31" stroke-width="1.5"/>
+      <rect x="600" y="16" width="160" height="4" rx="2" fill="#C84B31"/>
+      <text x="680" y="50" text-anchor="middle" class="pain-funnel__label">Саботаж изменений</text>
+
+      <rect x="780" y="16" width="160" height="56" rx="4" fill="#FFFFFF" stroke="#C84B31" stroke-width="1.5"/>
+      <rect x="780" y="16" width="160" height="4" rx="2" fill="#C84B31"/>
+      <text x="860" y="50" text-anchor="middle" class="pain-funnel__label">Потеря знаний</text>
+
+      <circle cx="480" cy="168" r="6" fill="#C84B31"/>
+
+      <rect x="280" y="214" width="400" height="56" rx="4" fill="#1A1A2E" stroke="#D4A843" stroke-width="2"/>
+      <text x="480" y="248" text-anchor="middle" class="pain-funnel__outcome">HR = «отдел оформления»</text>
+    </svg>
+  </div>
+
   <div class="pain-grid">
     <div class="pain-card">
       <h3>Нехватка компетентных HR</h3>
