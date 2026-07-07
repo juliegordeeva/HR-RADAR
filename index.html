@@ -409,6 +409,100 @@
   }
   .artifact-card p { font-size: 13px; color: var(--slate); line-height: 1.5; }
 
+  .artifacts-dashboard {
+    max-width: 920px;
+    margin: 0 auto 48px;
+  }
+  .dashboard-mock {
+    background: var(--white);
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    box-shadow: 0 12px 40px rgba(26,26,46,0.08);
+    overflow: hidden;
+  }
+  .dashboard-mock__topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 20px;
+    background: var(--ink);
+    color: var(--white);
+  }
+  .dashboard-mock__title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .06em;
+  }
+  .dashboard-mock__period {
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    font-weight: 600;
+  }
+  .dashboard-mock__body { padding: 20px; }
+  .dashboard-mock__kpis {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .dashboard-mock__kpi {
+    background: var(--mist);
+    border-radius: 4px;
+    padding: 14px 16px;
+    border-top: 3px solid var(--accent);
+  }
+  .dashboard-mock__kpi:nth-child(2) { border-top-color: var(--gold); }
+  .dashboard-mock__kpi:nth-child(3) { border-top-color: var(--ink); }
+  .dashboard-mock__kpi:nth-child(4) { border-top-color: #6B8F71; }
+  .dashboard-mock__kpi-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin-bottom: 6px;
+  }
+  .dashboard-mock__kpi-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .dashboard-mock__kpi-delta {
+    font-size: 11px;
+    font-weight: 600;
+    margin-top: 6px;
+  }
+  .dashboard-mock__kpi-delta--up { color: #2E7D4F; }
+  .dashboard-mock__kpi-delta--down { color: var(--accent); }
+  .dashboard-mock__charts {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 16px;
+  }
+  .dashboard-mock__panel {
+    background: var(--mist);
+    border-radius: 4px;
+    padding: 16px;
+  }
+  .dashboard-mock__panel-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin-bottom: 12px;
+  }
+  .dashboard-mock svg { width: 100%; height: auto; display: block; }
+  .artifacts-dashboard__caption {
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--slate);
+    text-align: center;
+  }
+
   /* ── FOR WHOM ── */
   .for-whom { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
   .audience-list { margin-top: 32px; display: flex; flex-direction: column; gap: 12px; }
@@ -663,6 +757,8 @@
     .days-grid { grid-template-columns: repeat(2, 1fr); }
     .modules-grid { grid-template-columns: 1fr; }
     .artifacts-grid { grid-template-columns: 1fr; }
+    .dashboard-mock__kpis { grid-template-columns: repeat(2, 1fr); }
+    .dashboard-mock__charts { grid-template-columns: 1fr; }
     .for-whom { grid-template-columns: 1fr; gap: 40px; }
     .mission-bullets { grid-template-columns: 1fr; }
     .contact-cards { grid-template-columns: 1fr; }
@@ -1081,6 +1177,63 @@
   <div class="section-label">Бизнес-результаты</div>
   <h2>Что получает компания<br>на выходе</h2>
   <p class="lead">Не красивые презентации — конкретные артефакты, которые сразу начинают работать.</p>
+
+  <div class="artifacts-dashboard">
+    <div class="dashboard-mock" role="img" aria-label="Пример прототипа HR-дашборда: текучесть, удержание, стоимость найма, вовлечённость">
+      <div class="dashboard-mock__topbar">
+        <div class="dashboard-mock__title">HR Dashboard</div>
+        <div class="dashboard-mock__period">Q1 2026 · для руководства</div>
+      </div>
+      <div class="dashboard-mock__body">
+        <div class="dashboard-mock__kpis">
+          <div class="dashboard-mock__kpi">
+            <div class="dashboard-mock__kpi-label">Текучесть</div>
+            <div class="dashboard-mock__kpi-value">14%</div>
+            <div class="dashboard-mock__kpi-delta dashboard-mock__kpi-delta--down">▼ 2 п.п.</div>
+          </div>
+          <div class="dashboard-mock__kpi">
+            <div class="dashboard-mock__kpi-label">Удержание</div>
+            <div class="dashboard-mock__kpi-value">86%</div>
+            <div class="dashboard-mock__kpi-delta dashboard-mock__kpi-delta--up">▲ 4 п.п.</div>
+          </div>
+          <div class="dashboard-mock__kpi">
+            <div class="dashboard-mock__kpi-label">Стоимость найма</div>
+            <div class="dashboard-mock__kpi-value">42К</div>
+            <div class="dashboard-mock__kpi-delta dashboard-mock__kpi-delta--down">▼ 8%</div>
+          </div>
+          <div class="dashboard-mock__kpi">
+            <div class="dashboard-mock__kpi-label">Вовлечённость</div>
+            <div class="dashboard-mock__kpi-value">71</div>
+            <div class="dashboard-mock__kpi-delta dashboard-mock__kpi-delta--up">▲ 6 п.</div>
+          </div>
+        </div>
+        <div class="dashboard-mock__charts">
+          <div class="dashboard-mock__panel">
+            <div class="dashboard-mock__panel-title">Динамика текучести по месяцам</div>
+            <svg viewBox="0 0 360 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <line x1="30" y1="100" x2="340" y2="100" stroke="#D8D4CC" stroke-width="1"/>
+              <polyline points="30,72 90,65 150,58 210,52 270,48 330,44" fill="none" stroke="#C84B31" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="330" cy="44" r="4" fill="#C84B31"/>
+              <text x="30" y="115" font-family="Manrope,sans-serif" font-size="9" fill="#4A5568">Янв</text>
+              <text x="150" y="115" font-family="Manrope,sans-serif" font-size="9" fill="#4A5568">Мар</text>
+              <text x="300" y="115" font-family="Manrope,sans-serif" font-size="9" fill="#4A5568">Июн</text>
+            </svg>
+          </div>
+          <div class="dashboard-mock__panel">
+            <div class="dashboard-mock__panel-title">Воронка найма</div>
+            <svg viewBox="0 0 240 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="20" y="18" width="200" height="14" rx="2" fill="#1A1A2E" opacity="0.85"/>
+              <rect x="40" y="40" width="160" height="14" rx="2" fill="#C84B31" opacity="0.75"/>
+              <rect x="60" y="62" width="120" height="14" rx="2" fill="#D4A843" opacity="0.85"/>
+              <rect x="80" y="84" width="80" height="14" rx="2" fill="#6B8F71" opacity="0.9"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="artifacts-dashboard__caption">Пример прототипа HR-дашборда — один из артефактов программы</p>
+  </div>
+
   <div class="artifacts-grid">
     <div class="artifact-card">
       <div class="icon">📊</div>
