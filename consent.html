@@ -94,11 +94,15 @@
   /* ── FOOTER ── */
   footer {
     background: var(--ink); padding: 40px 48px;
-    display: flex; justify-content: space-between; align-items: center;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
     border-top: 1px solid rgba(255,255,255,0.08);
   }
+  .footer-top { display: flex; justify-content: space-between; align-items: center; width: 100%; }
   footer .footer-brand { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.4); letter-spacing: .14em; text-transform: uppercase; }
   footer .footer-tagline { font-size: 12px; color: rgba(255,255,255,0.3); }
+  footer .footer-legal { font-size: 11px; color: rgba(255,255,255,0.25); line-height: 1.6; margin-top: 16px; width: 100%; text-align: center; }
+  footer .footer-legal a { color: rgba(255,255,255,0.4); text-decoration: none; }
+  footer .footer-legal a:hover { color: rgba(255,255,255,0.65); }
 
   @media (max-width: 900px) {
     nav { padding: 16px 24px; }
@@ -136,7 +140,7 @@
 <p>Обработка заявки, поступившей через сайт www.radarexec.ru, связь со мной для уточнения деталей и оказания услуг; направление рассылок — при отдельном согласии.</p>
 
 <h2>3. Способ обработки</h2>
-<p>Данные передаются мной напрямую на электронную почту Оператора (prof@jgordeeva.ru) через мой собственный почтовый клиент при отправке заявки. Согласие считается предоставленным в момент отправки заполненной формы.</p>
+<p>Данные передаются мной напрямую на электронную почту Оператора (prof@jgordeeva.ru) через мой собственный почтовый клиент при отправке письма с заявкой. Согласие считается предоставленным в момент отправки такого письма.</p>
 
 <h2>4. Срок действия</h2>
 <p>Согласие действует до его отзыва мной или до достижения цели обработки.</p>
@@ -148,8 +152,14 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-brand">HR — Новый Контур · 2026</div>
-  <div class="footer-tagline">Переход от кадрового оформления к управленческой архитектуре</div>
+  <div class="footer-top">
+    <div class="footer-brand">HR — Новый Контур · 2026</div>
+    <div class="footer-tagline">Переход от кадрового оформления к управленческой архитектуре</div>
+  </div>
+  <div class="footer-legal">
+    ИП Гордеева Юлия Владимировна · ОГРНИП 319774600004492 · ИНН 501304589898<br>
+    <a href="privacy-policy.html">Политика обработки персональных данных</a> · <a href="consent.html">Согласие на обработку персональных данных</a>
+  </div>
 </footer>
 
 </body>
