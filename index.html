@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HR-партнер нового контура — Выездная лаборатория</title>
+<title>HR-партнер нового контура — программа подготовки HR 2026</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap');
 
@@ -126,6 +126,32 @@
     transition: border-color .2s, color .2s;
   }
   .btn-secondary-light:hover { border-color: var(--accent); color: var(--accent); }
+
+  .mailto-hint {
+    width: 100%;
+    font-size: 11px;
+    line-height: 1.4;
+    color: var(--slate);
+    opacity: .85;
+    margin-top: -2px;
+  }
+  .mailto-hint::before { content: '✉ '; opacity: .7; }
+  .mailto-hint--light { color: rgba(255,255,255,0.5); opacity: 1; }
+
+  /* Author badge in hero */
+  .hero-author {
+    display: flex; align-items: center; gap: 12px;
+    margin-top: 28px;
+  }
+  .hero-author-photo {
+    width: 44px; height: 44px; border-radius: 50%;
+    object-fit: cover; object-position: center top;
+    border: 1.5px solid rgba(212,168,67,0.6);
+    flex-shrink: 0;
+  }
+  .hero-author-name {
+    font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.75); line-height: 1.4;
+  }
 
   .hero-right { display: flex; flex-direction: column; gap: 20px; }
   .hero-stat-card {
@@ -252,6 +278,25 @@
   .module-card h5 { font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
   .module-card p { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.5; }
 
+  /* Program accordion */
+  .program-details { margin-bottom: 32px; }
+  .program-details > summary {
+    cursor: pointer; list-style: none;
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 14px; font-weight: 600; color: var(--white);
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 4px; padding: 14px 24px; margin-bottom: 24px;
+    transition: background .2s, border-color .2s;
+  }
+  .program-details > summary::-webkit-details-marker { display: none; }
+  .program-details > summary::before {
+    content: '▸'; color: var(--accent);
+    display: inline-block; transition: transform .2s;
+  }
+  .program-details[open] > summary::before { transform: rotate(90deg); }
+  .program-details > summary:hover { background: rgba(255,255,255,0.1); border-color: var(--accent); }
+  .program-details[open] > summary { border-color: var(--accent); }
+
   /* ── ARTIFACTS ── */
   .artifacts { background: var(--mist); }
   .artifacts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -261,6 +306,13 @@
   }
   .artifact-card .icon { font-size: 28px; margin-bottom: 16px; }
   .artifact-card h4 { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+  .artifact-tag {
+    display: inline-block; vertical-align: middle;
+    font-size: 10px; font-weight: 600; letter-spacing: .04em;
+    color: var(--accent); background: rgba(200,75,49,0.1);
+    border-radius: 3px; padding: 2px 7px; margin-left: 4px;
+    text-transform: uppercase;
+  }
   .artifact-card p { font-size: 13px; color: var(--slate); line-height: 1.5; }
 
   /* ── FOR WHOM ── */
@@ -541,24 +593,28 @@
     <li><a href="#mission">Миссия</a></li>
     <li><a href="#experts">Команда</a></li>
   </ul>
-  <a href="mailto:prof@jgordeeva.ru?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20radarexec.ru" class="nav-cta">Оставить заявку</a>
+  <a href="mailto:prof@jgordeeva.ru?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20radarexec.ru" class="nav-cta" title="Откроется ваша почтовая программа с готовым письмом">Оставить заявку</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <div class="hero-eyebrow">Программа подготовки УЧР (HR, HR BP, HRD) 2026</div>
+    <div class="hero-eyebrow">Программа подготовки HR-директоров и HR-бизнес-партнёров · 2026</div>
     <h1>HR-партнер<br><em>нового</em><br>контура</h1>
     <p class="hero-sub">Автоматизация, импортозамещение HR-сервисов, knowledge management, ESG, инклюзия и интеграция вернувшихся с СВО. Переход от кадрового оформления к управленческой архитектуре.</p>
     <div class="hero-ctas">
       <a href="#formats" class="btn-primary">Выбрать формат</a>
       <a href="#program" class="btn-outline">Подробнее о программе</a>
     </div>
+    <div class="hero-author">
+      <img src="assets/images/gordeeva.jpg" alt="Юлия Гордеева — автор программы" class="hero-author-photo">
+      <span class="hero-author-name">Юлия Гордеева — автор и ведущая программы</span>
+    </div>
   </div>
   <div class="hero-right">
     <div class="hero-stat-card">
       <div class="big">2026</div>
-      <div class="label">Год, когда бизнес уже требует от УЧР роль управленческого партнёра — не кадровика</div>
+      <div class="label">Год, когда бизнес уже требует от HR роль управленческого партнёра — не кадровика</div>
     </div>
     <div class="hero-stats-row">
       <div class="hero-stat-small">
@@ -588,20 +644,20 @@
   <p class="lead">Бизнес ожидает управленческого партнёра. Рынок предлагает кадровых оформителей. Это расстояние и есть точка входа программы.</p>
   <div class="pain-grid">
     <div class="pain-card">
-      <h3>Нехватка компетентных УЧР</h3>
-      <p>Много специалистов по кадровым документам — мало тех, кто говорит с руководством на языке целей, рисков и метрик. УЧР остаётся «отделом оформления».</p>
+      <h3>Нехватка компетентных HR</h3>
+      <p>Много специалистов по кадровым документам — мало тех, кто говорит с руководством на языке целей, рисков и метрик. HR остаётся «отделом оформления».</p>
     </div>
     <div class="pain-card">
       <h3>Провал в аналитике</h3>
-      <p>Excel вместо HR-дашбордов, ручной подбор вместо управляемой воронки, нет прозрачной аналитики. УЧР не умеет мыслить процессно и цифрами.</p>
+      <p>Excel вместо HR-дашбордов, ручной подбор вместо управляемой воронки, нет прозрачной аналитики. HR не умеет мыслить процессно и цифрами.</p>
     </div>
     <div class="pain-card">
-      <h3>Импортозамещение без УЧР</h3>
-      <p>Компании заменяют сервисы, а УЧР не может описать процесс, сформулировать ТЗ или провести внедрение без саботажа. Итог — цифровая имитация.</p>
+      <h3>Импортозамещение без HR</h3>
+      <p>Компании заменяют сервисы, а HR не может описать процесс, сформулировать ТЗ или провести внедрение без саботажа. Итог — цифровая имитация.</p>
     </div>
     <div class="pain-card">
       <h3>Саботаж изменений</h3>
-      <p>«У нас так не принято», «люди не будут пользоваться», «это не зона УЧР». Вместо агента изменений — точка сопротивления, которая увеличивает нагрузку на бизнес.</p>
+      <p>«У нас так не принято», «люди не будут пользоваться», «это не зона HR». Вместо агента изменений — точка сопротивления, которая увеличивает нагрузку на бизнес.</p>
     </div>
     <div class="pain-card">
       <h3>Потеря корпоративных знаний</h3>
@@ -615,6 +671,7 @@
   <div class="section-cta">
     <a href="mailto:prof@jgordeeva.ru?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20radarexec.ru" class="btn-primary">Обсудить задачу</a>
     <a href="#formats" class="btn-secondary-light">Смотреть форматы программы</a>
+    <p class="mailto-hint">Нажатие откроет вашу почтовую программу с готовым письмом.</p>
   </div>
 </section>
 
@@ -623,12 +680,12 @@
   <div class="solution">
     <div class="solution-intro">
       <div class="section-label">Архитектура программы</div>
-      <h2>Шесть контуров нового УЧР</h2>
+      <h2>Шесть контуров нового HR</h2>
       <p class="lead" style="margin-bottom: 0;">Программа строится вокруг шести практических контуров. Каждый — это реальные навыки, применимые с первого дня после обучения.</p>
 
       <div style="margin-top: 40px; padding: 28px; background: var(--mist); border-radius: 4px; border-left: 4px solid var(--accent);">
         <div style="font-size: 13px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 12px;">Ключевое преимущество</div>
-        <p style="font-size: 15px; line-height: 1.7; color: var(--ink);">Выпускник умеет видеть УЧР как часть управленческого контура компании, предлагать конкретные решения, описывать и автоматизировать процессы, участвовать в импортозамещении, создавать базы знаний и вести социально значимые проекты как управленческие.</p>
+        <p style="font-size: 15px; line-height: 1.7; color: var(--ink);">Выпускник умеет видеть HR как часть управленческого контура компании, предлагать конкретные решения, описывать и автоматизировать процессы, участвовать в импортозамещении, создавать базы знаний и вести социально значимые проекты как управленческие.</p>
       </div>
     </div>
 
@@ -636,7 +693,7 @@
       <div class="contour-item">
         <div class="contour-num">1</div>
         <div class="contour-text">
-          <h4>УЧР как управленческий партнёр</h4>
+          <h4>HR как управленческий партнёр</h4>
           <p>Понимание управленческого контура, формулировка HR-предложения для руководства, защита инициатив, бюджетов и изменений. Переход от исполнителя заявок к участнику управленческих решений.</p>
         </div>
       </div>
@@ -650,22 +707,22 @@
       <div class="contour-item">
         <div class="contour-num">3</div>
         <div class="contour-text">
-          <h4>People Analytics и прозрачность</h4>
-          <p>Текучесть, удержание, вовлечённость, стоимость найма, absenteeism, ESG-показатели. Прототип HR-дашборда для руководства — финальный артефакт блока.</p>
+          <h4>HR-аналитика и прозрачность</h4>
+          <p>Текучесть, удержание, вовлечённость, стоимость найма, абсентеизм, ESG-показатели. Прототип HR-дашборда для руководства — финальный артефакт блока.</p>
         </div>
       </div>
       <div class="contour-item">
         <div class="contour-num">4</div>
         <div class="contour-text">
           <h4>Разумное и ответственное использование ИИ</h4>
-          <p>Применение ИИ-инструментов в подборе, адаптации, аналитике и генерации документов — и понимание границ: где алгоритм ошибается, где нарушается приватность данных, где решение должно оставаться за человеком. УЧР как ответственный заказчик и контролёр ИИ-решений, а не пассивный пользователь.</p>
+          <p>Применение ИИ-инструментов в подборе, адаптации, аналитике и генерации документов — и понимание границ: где алгоритм ошибается, где нарушается приватность данных, где решение должно оставаться за человеком. HR как ответственный заказчик и контролёр ИИ-решений, а не пассивный пользователь.</p>
         </div>
       </div>
       <div class="contour-item">
         <div class="contour-num">5</div>
         <div class="contour-text">
-          <h4>Инклюзия, СВО-интеграция и ESG</h4>
-          <p>Организация инклюзивного рабочего пространства, интеграция вернувшихся с СВО, взаимодействие с органами власти и центрами занятости. ESG как система социальных и кадровых метрик, а также выстраивание профессионального взаимодействия с органами власти как отдельная зона ответственности современного УЧР.</p>
+          <h4>Инклюзия, интеграция вернувшихся с СВО и ESG</h4>
+          <p>Организация инклюзивного рабочего пространства, интеграция вернувшихся с СВО, взаимодействие с органами власти и центрами занятости. ESG как система социальных и кадровых метрик, а также выстраивание профессионального взаимодействия с органами власти как отдельная зона ответственности современного HR.</p>
         </div>
       </div>
       <div class="contour-item">
@@ -680,6 +737,7 @@
   <div class="section-cta">
     <a href="#formats" class="btn-primary">Выбрать формат обучения</a>
     <a href="mailto:prof@jgordeeva.ru?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20radarexec.ru" class="btn-secondary-light">Оставить заявку</a>
+    <p class="mailto-hint">Нажатие откроет вашу почтовую программу с готовым письмом.</p>
   </div>
 </section>
 
@@ -716,13 +774,13 @@
       </div>
     </div>
 
-    <div style="margin-bottom: 32px;">
-      <div class="section-label" style="color: rgba(255,255,255,0.4); margin-bottom: 24px;">Программа 10 дней</div>
+    <details class="program-details">
+      <summary>Показать подробную программу по дням — 10 дней</summary>
       <div class="days-grid">
         <div class="day-card">
           <div class="day-num">День 1</div>
-          <h5>Управленческий контур УЧР</h5>
-          <p>Почему старый УЧР не работает. Как руководители оценивают УЧР. Формулировка управленческого предложения.</p>
+          <h5>Управленческий контур HR</h5>
+          <p>Почему старый HR не работает. Как руководители оценивают HR. Формулировка управленческого предложения.</p>
           <div class="artifact">▸ Матрица перехода к управленческому партнёру</div>
         </div>
         <div class="day-card">
@@ -733,8 +791,8 @@
         </div>
         <div class="day-card">
           <div class="day-num">День 3</div>
-          <h5>Автоматизация, импортозамещение и ИИ в УЧР</h5>
-          <p>Выбор процесса, описание целевого состояния, подготовка требований к сервису, сборка backlog. Практика: где в HR-процессах уместен ИИ (скрининг резюме, чат-боты адаптации, генерация первичных документов), а где нужен человеческий контроль. Оценка рисков алгоритмической предвзятости.</p>
+          <h5>Автоматизация, импортозамещение и ИИ в HR</h5>
+          <p>Выбор процесса, описание целевого состояния, подготовка требований к сервису, сборка списка задач на автоматизацию. Практика: где в HR-процессах уместен ИИ (скрининг резюме, чат-боты адаптации, генерация первичных документов), а где нужен человеческий контроль. Оценка рисков алгоритмической предвзятости.</p>
           <div class="artifact">▸ Мини-ТЗ на автоматизацию HR-сервиса</div>
         </div>
         <div class="day-card">
@@ -751,14 +809,14 @@
         </div>
         <div class="day-card">
           <div class="day-num">День 6</div>
-          <h5>Инклюзия, СВО и ESG</h5>
+          <h5>Инклюзия, интеграция вернувшихся с СВО и ESG</h5>
           <p>Маршрут интеграции сотрудника, карта рисков, карта партнёров, взаимодействие с органами власти.</p>
           <div class="artifact">▸ Паспорт ESG/интеграционного проекта</div>
         </div>
         <div class="day-card">
           <div class="day-num">День 7</div>
           <h5>Проектная сессия — автоматизация и ИИ</h5>
-          <p>Внедрение мини-ТЗ, тестирование решений, работа с сопротивлением пользователей, корректировка backlog.</p>
+          <p>Внедрение мини-ТЗ, тестирование решений, работа с сопротивлением пользователей, корректировка списка задач.</p>
           <div class="artifact">▸ Пилот автоматизации HR-сервиса</div>
         </div>
         <div class="day-card">
@@ -786,7 +844,7 @@
           <div class="artifact" style="color: rgba(255,255,255,0.5);">▸ Контроль запуска пилота</div>
         </div>
       </div>
-    </div>
+    </details>
   </div>
 
   <!-- ONLINE TAB -->
@@ -809,27 +867,31 @@
       </div>
     </div>
 
-    <div class="modules-grid">
-      <div class="module-card"><div class="mod-num">МОДУЛЬ 01</div><h5>Почему старый УЧР не работает</h5><p>Роль УЧР в 2026 году. Почему КДП недостаточно. Личная карта профессионального перехода.</p></div>
+    <details class="program-details">
+      <summary>Показать все 13 модулей онлайн-программы</summary>
+      <div class="modules-grid">
+      <div class="module-card"><div class="mod-num">МОДУЛЬ 01</div><h5>Почему старый HR не работает</h5><p>Роль HR в 2026 году. Почему КДП недостаточно. Личная карта профессионального перехода.</p></div>
       <div class="module-card"><div class="mod-num">МОДУЛЬ 02</div><h5>Управленческий контур компании</h5><p>Как принимаются решения. Язык рисков, целей, ресурсов. Шаблон HR-предложения для руководства.</p></div>
       <div class="module-card"><div class="mod-num">МОДУЛЬ 03</div><h5>Диагностика HR-процессов</h5><p>Как описывать процессы, где возникают потери. Почему нельзя автоматизировать хаос.</p></div>
-      <div class="module-card"><div class="mod-num">МОДУЛЬ 04</div><h5>Автоматизация УЧР и ИИ</h5><p>Что автоматизировать в первую очередь. Backlog автоматизации. УЧР как заказчик цифровых решений. Возможности и границы применения ИИ в подборе, адаптации, кадровом делопроизводстве и аналитике. Риски: предвзятость алгоритмов, утечка персональных данных, ответственность за автоматизированные решения. Чек-лист ответственного внедрения ИИ-инструментов.</p></div>
+      <div class="module-card"><div class="mod-num">МОДУЛЬ 04</div><h5>Автоматизация HR и ИИ</h5><p>Что автоматизировать в первую очередь. Список приоритетов автоматизации. HR как заказчик цифровых решений. Возможности и границы применения ИИ в подборе, адаптации, кадровом делопроизводстве и аналитике. Риски: предвзятость алгоритмов, утечка персональных данных, ответственность за автоматизированные решения. Чек-лист ответственного внедрения ИИ-инструментов.</p></div>
       <div class="module-card"><div class="mod-num">МОДУЛЬ 05</div><h5>Импортозамещение HR-сервисов</h5><p>Замена сервисов аналитики, подбора, обучения. Описание требований, сравнение решений, снижение сопротивления.</p></div>
       <div class="module-card"><div class="mod-num">МОДУЛЬ 06</div><h5>HR-аналитика без страха</h5><p>Показатели для руководства. Простой HR-дашборд. Прозрачность HR-решений.</p></div>
       <div class="module-card"><div class="mod-num">МОДУЛЬ 07</div><h5>Мотивация, вовлечённость, удержание</h5><p>Прозрачные показатели мотивации. Карта факторов удержания и связь с руководителем.</p></div>
       <div class="module-card"><div class="mod-num">МОДУЛЬ 08</div><h5>Knowledge Management</h5><p>Корпоративная база знаний, сохранение экспертизы, связь с адаптацией и кадровым резервом. Внутреннее наставничество и модель «лидеры учат лидеров» как механизм передачи экспертизы внутри компании, снижающий риск потери знаний при уходе ключевых сотрудников.</p></div>
-      <div class="module-card"><div class="mod-num">МОДУЛЬ 09</div><h5>УЧР как агент изменений</h5><p>Работа с сопротивлением. Запуск пилотов. Обучение пользователей. Сопровождение внедрения.</p></div>
+      <div class="module-card"><div class="mod-num">МОДУЛЬ 09</div><h5>HR как агент изменений</h5><p>Работа с сопротивлением. Запуск пилотов. Обучение пользователей. Сопровождение внедрения.</p></div>
       <div class="module-card"><div class="mod-num">МОДУЛЬ 10</div><h5>Инклюзивное рабочее пространство</h5><p>Аудит пространства, коммуникаций и цифровой среды. Чек-лист инклюзивного рабочего пространства.</p></div>
       <div class="module-card"><div class="mod-num">МОДУЛЬ 11</div><h5>Интеграция вернувшихся с СВО</h5><p>Маршрут интеграции. Риски стигматизации. Взаимодействие с внешними партнёрами.</p></div>
-      <div class="module-card" style="border-color: rgba(212,168,67,0.4); background: rgba(212,168,67,0.08);"><div class="mod-num" style="color: var(--gold);">МОДУЛЬ 12</div><h5>ESG для УЧР</h5><p>ESG как социально-управленческая рамка. Социальные и кадровые метрики. Паспорт ESG-проекта как итоговый артефакт.</p></div>
+      <div class="module-card" style="border-color: rgba(212,168,67,0.4); background: rgba(212,168,67,0.08);"><div class="mod-num" style="color: var(--gold);">МОДУЛЬ 12</div><h5>ESG для HR</h5><p>ESG как социально-управленческая рамка. Социальные и кадровые метрики. Паспорт ESG-проекта как итоговый артефакт.</p></div>
       <div class="module-card" style="border-color: rgba(212,168,67,0.4); background: rgba(212,168,67,0.08);"><div class="mod-num" style="color: var(--gold);">МОДУЛЬ 13</div><h5>Взаимодействие с органами власти (GR)</h5><p>Формирование профессиональных компетенций для работы с органами государственной власти РФ: коммуникация с центрами занятости, участие в программах государственной поддержки занятости, кадровая отчётность перед госорганами, работа с региональными органами труда и социальной защиты. Паспорт GR-проекта как итоговый артефакт.</p></div>
-    </div>
+      </div>
+    </details>
   </div>
 
   <div class="section-cta section-cta--center">
     <a href="mailto:prof@jgordeeva.ru?subject=%D0%97%D0%B0%D1%8F%D0%B2%D0%BA%D0%B0%20%D0%BD%D0%B0%20%D0%B2%D1%8B%D0%B5%D0%B7%D0%B4%D0%BD%D1%83%D1%8E%20%D0%BB%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%B8%D1%8E" class="btn-primary">Заявка на выездную лабораторию</a>
     <a href="mailto:ladlena_k@mail.ru?subject=%D0%9E%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0%20%E2%80%94%202%2C5%20%D0%BC%D0%B5%D1%81%D1%8F%D1%86%D0%B0" class="btn-outline">Онлайн-программа — 2,5 месяца</a>
     <a href="mailto:prof@jgordeeva.ru?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20radarexec.ru" class="btn-outline">Оставить заявку</a>
+    <p class="mailto-hint mailto-hint--light">Кнопки заявки откроют вашу почтовую программу с готовым письмом.</p>
   </div>
 </section>
 
@@ -866,7 +928,7 @@
     </div>
     <div class="artifact-card">
       <div class="icon">🏛️</div>
-      <h4>Паспорт GR-проекта</h4>
+      <h4>Паспорт GR-проекта <span class="artifact-tag">онлайн-программа</span></h4>
       <p>Стратегия взаимодействия с органами власти: центры занятости, программы господдержки, кадровая отчётность.</p>
     </div>
     <div class="artifact-card">
@@ -883,6 +945,7 @@
   <div class="section-cta">
     <a href="mailto:prof@jgordeeva.ru?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20radarexec.ru" class="btn-primary">Получить такие результаты</a>
     <a href="#formats" class="btn-secondary-light">Узнать, как это работает</a>
+    <p class="mailto-hint">Нажатие откроет вашу почтовую программу с готовым письмом.</p>
   </div>
 </section>
 
@@ -892,7 +955,7 @@
     <div>
       <div class="section-label">Для кого программа</div>
       <h2>Те, кому бизнес<br>уже предъявляет<br>новые требования</h2>
-      <p class="lead" style="margin-bottom: 0;">Программа нужна не для тех, кто хочет «прокачать кадровую работу». Она для тех, кто готов занять управленческую позицию в УЧР.</p>
+      <p class="lead" style="margin-bottom: 0;">Программа нужна не для тех, кто хочет «прокачать кадровую работу». Она для тех, кто готов занять управленческую позицию в HR.</p>
     </div>
     <div>
       <div class="audience-list">
@@ -905,13 +968,14 @@
         <div class="audience-item"><span>Проектные команды по инклюзии и интеграции</span></div>
         <div class="audience-item"><span>Работодатели, которым нужно быстро усилить HR-функцию</span></div>
         <div class="audience-item"><span>Женщины в регионах, ищущие смену профессии</span></div>
-        <div class="audience-item"><span>Соискатели без опыта в УЧР, готовые войти в профессию через аналитику и цифровые инструменты</span></div>
+        <div class="audience-item"><span>Соискатели без опыта в HR, готовые войти в профессию через аналитику и цифровые инструменты</span></div>
       </div>
     </div>
   </div>
   <div class="section-cta">
     <a href="mailto:prof@jgordeeva.ru?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20radarexec.ru" class="btn-primary">Подходит ли мне программа?</a>
     <a href="#mission" class="btn-secondary-light">Программа для регионов</a>
+    <p class="mailto-hint">Нажатие откроет вашу почтовую программу с готовым письмом.</p>
   </div>
 </section>
 
@@ -919,7 +983,7 @@
 <section class="mission-section" id="mission">
   <div class="section-label">Социальная миссия</div>
   <h2>Другой выбор для женщин в регионах</h2>
-  <p class="lead">Профессия УЧР и рекрутинг — один из немногих карьерных путей с низким порогом входа и высоким спросом на рынке труда. Не требует профильного диплома, стартует с базовых аналитических и цифровых навыков — и открывает совершенно другой уровень возможностей, чем работа продавщицей в магазине или оператором пункта выдачи заказов.</p>
+  <p class="lead">Профессия HR и рекрутинг — один из немногих карьерных путей с низким порогом входа и высоким спросом на рынке труда. Не требует профильного диплома, стартует с базовых аналитических и цифровых навыков — и открывает совершенно другой уровень возможностей, чем работа продавщицей в магазине или оператором пункта выдачи заказов.</p>
   <div class="mission-bullets">
     <div class="mission-bullet">
       <h4>Низкий порог входа, высокий потолок роста</h4>
@@ -939,6 +1003,7 @@
   <div class="section-cta">
     <a href="mailto:prof@jgordeeva.ru?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20radarexec.ru" class="btn-primary">Узнать о программе для регионов</a>
     <a href="#experts" class="btn-outline">Познакомиться с командой</a>
+    <p class="mailto-hint mailto-hint--light">Нажатие откроет вашу почтовую программу с готовым письмом.</p>
   </div>
 </section>
 
@@ -946,7 +1011,7 @@
 <section class="experts-section" id="experts">
   <div class="section-label">Экспертиза и команда</div>
   <h2>Кто стоит за программой</h2>
-  <p class="lead">Практики с опытом в УЧР, бизнес-образовании, работе с госсектором и социальными проектами — не теоретики, а те, кто уже реализовывал подобные задачи.</p>
+  <p class="lead">Практики с опытом в HR, бизнес-образовании, работе с госсектором и социальными проектами — не теоретики, а те, кто уже реализовывал подобные задачи.</p>
 
   <div class="experts-grid">
     <article class="expert-card" id="expert-julia">
@@ -958,7 +1023,7 @@
         <h3>Юлия Гордеева</h3>
         <p class="expert-hook">15+ лет в бизнес-образовании · 60+ корпоративных программ · Россия, Европа, Азия, MENA</p>
         <ul class="expert-bullets">
-          <li>Преподавала УЧР и организационное поведение в Президентской программе подготовки управленческих кадров и на MBA в РЭУ им. Г.В. Плеханова (2008–2022)</li>
+          <li>Преподавала HR и организационное поведение в Президентской программе подготовки управленческих кадров и на MBA в РЭУ им. Г.В. Плеханова (2008–2022)</li>
           <li>Разрабатывает и ведёт авторские программы для бизнеса совместно с РАНХиГС, РУДН, Финансовым университетом при Правительстве РФ</li>
           <li>С 2022 года консультирует и обучает на международных проектах — российских, азиатских и MENA</li>
           <li>Сертифицированный коуч ICF, ментор MBA-программ</li>
@@ -999,30 +1064,33 @@
   <div class="section-cta section-cta--center">
     <a href="mailto:prof@jgordeeva.ru?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20radarexec.ru" class="btn-primary">Связаться с командой</a>
     <a href="#formats" class="btn-secondary-light">Выбрать формат программы</a>
+    <p class="mailto-hint">Нажатие откроет вашу почтовую программу с готовым письмом.</p>
   </div>
 </section>
 
 <!-- QUOTE -->
 <section class="quote-section">
   <blockquote>
-    «Бизнесу больше не нужны кадровики-оформители. Нужны специалисты, способные управлять процессами, данными, автоматизацией, импортозамещением сервисов, корпоративными базами знаний, инклюзией и <em>социальными ESG-метриками</em>.»
+    «Бизнесу больше не нужны кадровики-оформители. Нужны управленческие партнёры, которые умеют работать с <em>данными, автоматизацией и людьми</em>.»
   </blockquote>
-  <div class="quote-attribution">Из концепции программы</div>
+  <div class="quote-attribution">— Юлия Гордеева, автор программы</div>
   <p class="quote-tagline">Эта компетенция нужна не завтра. Она нужна уже сейчас.</p>
   <div class="section-cta section-cta--center">
-    <a href="mailto:prof@jgordeeva.ru?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20radarexec.ru" class="btn-primary">Начать трансформацию УЧР</a>
+    <a href="mailto:prof@jgordeeva.ru?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20radarexec.ru" class="btn-primary">Начать трансформацию HR</a>
+    <p class="mailto-hint mailto-hint--light">Нажатие откроет вашу почтовую программу с готовым письмом.</p>
   </div>
 </section>
 
 <!-- CTA -->
 <section class="cta-section" id="contact">
   <div class="section-label" style="text-align: center;">Следующий шаг</div>
-  <h2>Выращивайте архитекторов<br>УЧР внутри компании</h2>
+  <h2>Растите архитекторов<br>HR-функции внутри компании</h2>
   <p class="lead">Выберите формат: выездная лаборатория для быстрой трансформации или онлайн-программа для глубокой перестройки компетенций.</p>
 
   <div class="cta-group" style="margin-bottom: 40px;">
     <a href="mailto:prof@jgordeeva.ru?subject=%D0%97%D0%B0%D1%8F%D0%B2%D0%BA%D0%B0%20%D0%BD%D0%B0%20%D0%B2%D1%8B%D0%B5%D0%B7%D0%B4%D0%BD%D1%83%D1%8E%20%D0%BB%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%B8%D1%8E" class="btn-primary">Заявка на выездную лабораторию</a>
     <a href="mailto:ladlena_k@mail.ru?subject=%D0%9E%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0%20%E2%80%94%202%2C5%20%D0%BC%D0%B5%D1%81%D1%8F%D1%86%D0%B0" class="btn-dark">Онлайн-программа — 2,5 месяца</a>
+    <p class="mailto-hint" style="text-align:center;">Кнопки заявки откроют вашу почтовую программу с готовым письмом.</p>
   </div>
 
   <div class="lead-form" style="text-align:center;">
