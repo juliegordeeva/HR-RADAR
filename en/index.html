@@ -521,6 +521,27 @@
   .mission-section { background: var(--ink); color: var(--white); }
   .mission-section h2 { color: var(--white); }
   .mission-section .lead { color: rgba(255,255,255,0.65); max-width: 720px; }
+  .mission-visual {
+    margin: 40px 0 48px;
+    max-width: 920px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+  .mission-visual img {
+    width: 100%;
+    display: block;
+    max-height: 400px;
+    object-fit: cover;
+    object-position: center 40%;
+  }
+  .mission-visual__caption {
+    padding: 12px 20px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.04);
+  }
   .mission-bullets {
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
     margin: 48px 0 40px;
@@ -625,20 +646,39 @@
 
   /* ── QUOTE ── */
   .quote-section {
-    background: var(--ink); padding: 80px 48px; text-align: center;
+    background: var(--ink); padding: 80px 48px;
   }
-  .quote-section blockquote {
+  .quote-inner {
+    max-width: 920px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 168px 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .quote-photo {
+    width: 168px;
+    height: 168px;
+    border-radius: 4px;
+    object-fit: cover;
+    object-position: center top;
+    border: 2px solid rgba(212,168,67,0.45);
+  }
+  .quote-content blockquote {
     font-family: 'Playfair Display', serif;
     font-size: clamp(20px, 2.8vw, 32px); font-weight: 700;
     color: var(--white); line-height: 1.4;
-    max-width: 820px; margin: 0 auto 28px;
+    margin: 0 0 20px;
+    text-align: left;
   }
-  .quote-section blockquote em { font-style: normal; color: var(--gold); }
-  .quote-attribution { font-size: 13px; color: rgba(255,255,255,0.45); letter-spacing: .1em; }
+  .quote-content blockquote em { font-style: normal; color: var(--gold); }
+  .quote-attribution { font-size: 13px; color: rgba(255,255,255,0.45); letter-spacing: .1em; text-align: left; }
   .quote-tagline {
     font-size: 17px; font-weight: 600; color: var(--accent);
-    margin-top: 40px;
+    margin-top: 24px;
+    text-align: left;
   }
+  .quote-content .section-cta { justify-content: flex-start; margin-top: 32px; }
 
   /* ── CTA ── */
   .cta-section {
@@ -761,6 +801,12 @@
     .dashboard-mock__charts { grid-template-columns: 1fr; }
     .for-whom { grid-template-columns: 1fr; gap: 40px; }
     .mission-bullets { grid-template-columns: 1fr; }
+    .quote-inner { grid-template-columns: 1fr; text-align: center; }
+    .quote-photo { margin: 0 auto; }
+    .quote-content blockquote,
+    .quote-attribution,
+    .quote-tagline { text-align: center; }
+    .quote-content .section-cta { justify-content: center; }
     .contact-cards { grid-template-columns: 1fr; }
     .experts-grid { grid-template-columns: 1fr; }
     .quote-section { padding: 60px 24px; }
@@ -1318,6 +1364,10 @@
   <div class="section-label">Social mission</div>
   <h2>A different choice for women in regions</h2>
   <p class="lead">HR and recruiting is one of the few career paths with a low entry barrier and high labor market demand. No specialized degree required — it starts with basic analytical and digital skills — and opens a completely different level of opportunity than working as a retail associate or parcel pickup attendant.</p>
+  <figure class="mission-visual">
+    <img src="../assets/images/mission-employment.jpg" alt="Career intensive: participants working in groups at an employment center" width="1260" height="685" loading="lazy">
+    <figcaption class="mission-visual__caption">Career intensive at an employment center · program practice</figcaption>
+  </figure>
   <div class="mission-bullets">
     <div class="mission-bullet">
       <h4>Low entry barrier, high growth ceiling</h4>
@@ -1404,14 +1454,19 @@
 
 <!-- QUOTE -->
 <section class="quote-section">
-  <blockquote>
-    "Business no longer needs personnel clerks. It needs management partners who can work with <em>data, automation, and people</em>."
-  </blockquote>
-  <div class="quote-attribution">— Yulia Gordeeva, program author</div>
-  <p class="quote-tagline">This competency is not needed tomorrow. It is needed right now.</p>
-  <div class="section-cta section-cta--center">
-    <a href="mailto:prof@jgordeeva.ru?subject=Request%20from%20hr.radarexec.ru%20website" class="btn-primary">Start HR transformation</a>
-    <p class="mailto-hint mailto-hint--light">Clicking will open your email client with a pre-filled message.</p>
+  <div class="quote-inner">
+    <img class="quote-photo" src="../assets/images/gordeeva-quote.jpg" alt="Yulia Gordeeva — program author" width="168" height="168" loading="lazy">
+    <div class="quote-content">
+      <blockquote>
+        "Business no longer needs personnel clerks. It needs management partners who can work with <em>data, automation, and people</em>."
+      </blockquote>
+      <div class="quote-attribution">— Yulia Gordeeva, program author</div>
+      <p class="quote-tagline">This competency is not needed tomorrow. It is needed right now.</p>
+      <div class="section-cta">
+        <a href="mailto:prof@jgordeeva.ru?subject=Request%20from%20hr.radarexec.ru%20website" class="btn-primary">Start HR transformation</a>
+        <p class="mailto-hint mailto-hint--light">Clicking will open your email client with a pre-filled message.</p>
+      </div>
+    </div>
   </div>
 </section>
 
