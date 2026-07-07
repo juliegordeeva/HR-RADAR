@@ -506,6 +506,23 @@
 
   /* ── FOR WHOM ── */
   .for-whom { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .audience-visual {
+    margin-top: 32px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .audience-visual img {
+    width: 100%;
+    display: block;
+  }
+  .audience-visual__caption {
+    padding: 10px 14px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--slate);
+    background: var(--mist);
+  }
   .audience-list { margin-top: 32px; display: flex; flex-direction: column; gap: 12px; }
   .audience-item {
     display: flex; align-items: center; gap: 14px;
@@ -1339,6 +1356,10 @@
       <div class="section-label">Для кого программа</div>
       <h2>Те, кому бизнес<br>уже предъявляет<br>новые требования</h2>
       <p class="lead" style="margin-bottom: 0;">Программа нужна не для тех, кто хочет «прокачать кадровую работу». Она для тех, кто готов занять управленческую позицию в HR.</p>
+      <figure class="audience-visual">
+        <img src="assets/images/audience-conference.jpg" alt="Панельная дискуссия на HR EXPO PRO: эксперты на сцене перед экраном с HR-аналитикой" width="768" height="440" loading="lazy">
+        <figcaption class="audience-visual__caption">HR EXPO PRO · панельная дискуссия с HR-аналитикой</figcaption>
+      </figure>
     </div>
     <div>
       <div class="audience-list">

@@ -506,6 +506,23 @@
 
   /* ── FOR WHOM ── */
   .for-whom { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .audience-visual {
+    margin-top: 32px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .audience-visual img {
+    width: 100%;
+    display: block;
+  }
+  .audience-visual__caption {
+    padding: 10px 14px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--slate);
+    background: var(--mist);
+  }
   .audience-list { margin-top: 32px; display: flex; flex-direction: column; gap: 12px; }
   .audience-item {
     display: flex; align-items: center; gap: 14px;
@@ -1339,6 +1356,10 @@
       <div class="section-label">Who the program is for</div>
       <h2>Built for people business<br>already expects more from</h2>
       <p class="lead" style="margin-bottom: 0;">This program is not for those who want to "improve personnel work." It is for those ready to take a management position in HR.</p>
+      <figure class="audience-visual">
+        <img src="../assets/images/audience-conference.jpg" alt="Panel discussion at HR EXPO PRO: experts on stage in front of an HR analytics screen" width="768" height="440" loading="lazy">
+        <figcaption class="audience-visual__caption">HR EXPO PRO · panel discussion with HR analytics</figcaption>
+      </figure>
     </div>
     <div>
       <div class="audience-list">
