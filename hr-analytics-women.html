@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HR-аналитика с ИИ — программа обучения для женщин в регионах</title>
+  <link rel="canonical" href="https://hr.radarexec.ru/hr-analytics-women.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f5f0;
+      --paper: #fffdf9;
+      --ink: #1f2e45;
+      --muted: #5e6a7d;
+      --line: #d9d2c3;
+      --gold: #b59352;
+      --gold-soft: #e6d6b3;
+      --blue: #294a74;
+      --card: #ffffff;
+      --shadow: 0 10px 30px rgba(31,46,69,0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #f3f0e8 0%, #f8f6f1 100%);
+      font-family: 'Inter', sans-serif;
+      color: var(--ink);
+    }
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      background: var(--paper);
+      padding: 14mm 14mm 12mm 14mm;
+      position: relative;
+      overflow: hidden;
+    }
+    .page:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(181,147,82,0.10), transparent 24%),
+        linear-gradient(135deg, rgba(41,74,116,0.03), transparent 35%);
+      pointer-events: none;
+    }
+    .topline {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10pt;
+      color: var(--muted);
+      margin-bottom: 6mm;
+    }
+    .topline .tag {
+      border: 1px solid var(--line);
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.85);
+    }
+    .topline a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .topline a:hover { color: var(--blue); }
+    .hero {
+      position: relative;
+      z-index: 1;
+      padding: 8mm 9mm;
+      border: 1px solid rgba(181,147,82,0.35);
+      background: linear-gradient(135deg, rgba(255,255,255,0.96), rgba(247,244,237,0.96));
+      box-shadow: var(--shadow);
+      border-radius: 22px;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 8.3pt;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 5mm;
+    }
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24pt;
+      line-height: 1.02;
+      margin: 0 0 4mm 0;
+      color: var(--ink);
+      max-width: 158mm;
+    }
+    .subtitle {
+      font-size: 11.5pt;
+      line-height: 1.42;
+      color: var(--blue);
+      font-weight: 600;
+      max-width: 164mm;
+      margin-bottom: 4mm;
+    }
+    .lead {
+      font-size: 10.2pt;
+      line-height: 1.5;
+      color: var(--muted);
+      max-width: 166mm;
+    }
+    .trust {
+      margin-top: 6mm;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+    .trust div {
+      background: var(--card);
+      border: 1px solid rgba(41,74,116,0.08);
+      border-left: 4px solid var(--gold);
+      border-radius: 14px;
+      padding: 9px 12px;
+      font-size: 9pt;
+      line-height: 1.35;
+      color: var(--ink);
+    }
+    .grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 8mm;
+      margin-top: 6mm;
+    }
+    .section {
+      background: rgba(255,255,255,0.86);
+      border: 1px solid rgba(31,46,69,0.08);
+      border-radius: 18px;
+      padding: 6mm;
+      box-shadow: var(--shadow);
+    }
+    h2 {
+      margin: 0 0 3.5mm 0;
+      font-size: 12.8pt;
+      line-height: 1.2;
+      color: var(--ink);
+    }
+    p {
+      margin: 0;
+      font-size: 9.6pt;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-top: 4mm;
+    }
+    .stat {
+      border-radius: 14px;
+      padding: 10px;
+      background: linear-gradient(180deg, #fffefb, #f8f3e8);
+      border: 1px solid rgba(181,147,82,0.22);
+    }
+    .stat b {
+      display: block;
+      font-size: 14pt;
+      color: var(--blue);
+      margin-bottom: 3px;
+    }
+    .list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 7px;
+      margin-top: 3.5mm;
+    }
+    .item {
+      padding: 9px 11px;
+      border-radius: 12px;
+      background: #fff;
+      border: 1px solid rgba(41,74,116,0.08);
+      font-size: 9.3pt;
+      line-height: 1.38;
+    }
+    .item b { color: var(--blue); }
+    .social-block {
+      position: relative;
+      z-index: 1;
+      margin-top: 6mm;
+      border-radius: 18px;
+      padding: 6mm;
+      background: linear-gradient(180deg, #fffefb, #f6ecd8);
+      border: 1px solid rgba(181,147,82,0.35);
+      box-shadow: var(--shadow);
+    }
+    .social-block .eyebrow2 {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 8.3pt;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 3mm;
+    }
+    .social-block h2 { font-size: 12.8pt; margin-bottom: 3mm; }
+    .social-block p { font-size: 9.6pt; color: var(--ink); }
+    .demo-block {
+      position: relative;
+      z-index: 1;
+      margin-top: 6mm;
+      border-radius: 18px;
+      padding: 7mm 8mm;
+      background: linear-gradient(135deg, rgba(41,74,116,0.96), rgba(31,46,69,0.96));
+      box-shadow: var(--shadow);
+      color: #fff;
+    }
+    .demo-block .eyebrow2 {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 8.3pt;
+      color: var(--gold-soft);
+      font-weight: 700;
+      margin-bottom: 2.5mm;
+    }
+    .demo-block h2 {
+      color: #fff;
+      font-size: 13.5pt;
+      margin-bottom: 2mm;
+    }
+    .demo-block .demo-lead {
+      color: rgba(255,255,255,0.85);
+      font-size: 9.7pt;
+      max-width: 168mm;
+      margin-bottom: 4mm;
+    }
+    .forum-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .forum-col {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 14px;
+      padding: 10px 12px;
+    }
+    .forum-col .ftag {
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-size: 8.2pt;
+      color: var(--gold-soft);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .forum-col p {
+      color: rgba(255,255,255,0.85);
+      font-size: 9.3pt;
+      line-height: 1.42;
+    }
+    .footer {
+      position: relative;
+      z-index: 1;
+      margin-top: 6mm;
+      border-top: 1px solid var(--line);
+      padding-top: 4mm;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 8mm;
+    }
+    .footer .small {
+      font-size: 8.8pt;
+      line-height: 1.45;
+      color: var(--muted);
+    }
+    .contacts {
+      text-align: right;
+      font-size: 8.8pt;
+      color: var(--ink);
+    }
+    .contacts b { color: var(--blue); }
+    .contacts a { color: var(--ink); text-decoration: none; }
+    .contacts a:hover { color: var(--blue); }
+    @media print {
+      body { background: #fff; }
+      .page { margin: 0; box-shadow: none; }
+    }
+    @media (max-width: 860px) {
+      .page { width: 100%; min-height: auto; padding: 18px 16px 28px; }
+      h1 { font-size: 22pt; max-width: none; }
+      .grid, .footer, .trust, .stats, .forum-grid { grid-template-columns: 1fr; }
+      .contacts { text-align: left; }
+      .topline { flex-direction: column; align-items: flex-start; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topline">
+      <div><a href="https://hr.radarexec.ru/">hr.radarexec.ru</a> · Программа обучения HR-аналитике / социальный и кадровый проект</div>
+      <div class="tag">Обучение / ИИ / Аналитика / Занятость женщин</div>
+    </div>
+
+    <section class="hero">
+      <div class="eyebrow">Новая профессия для женщин в регионах</div>
+      <h1>HR-аналитика с ИИ: программа, которая расширяет профессиональный выбор женщин в регионах</h1>
+      <div class="subtitle">Практическое обучение HR-аналитике и работе с ИИ-инструментами — реальная альтернатива работе продавщицей, и одновременно — ресурс операционной эффективности для работодателя.</div>
+      <div class="lead">Во многих регионах выбор профессий для женщин ограничен низкоквалифицированным сервисом — продавец, кассир, оператор. Программа даёт цифровую профессию: HR-аналитик, который использует ИИ для автоматизации процессов. Участница выходит не с сертификатом «для галочки», а с готовым проектом — аналитическим дашбордом, построенным на данных реального предприятия.</div>
+      <div class="trust">
+        <div><strong>Ведущие:</strong> Юлия Гордеева + эксперт по HR-аналитике и ИИ</div>
+        <div><strong>Формат:</strong> очно / гибрид, практика на процессах предприятий-партнёров</div>
+        <div><strong>Аудитория:</strong> женщины в регионах, соискательницы новой профессии, HR-специалисты</div>
+        <div><strong>Продукт:</strong> Программа обучения HR-аналитике с ИИ</div>
+      </div>
+    </section>
+
+    <div class="grid">
+      <div>
+        <section class="section">
+          <h2>Чему учит программа</h2>
+          <div class="list">
+            <div class="item"><b>Основы HR-аналитики</b> — текучесть, удержание, стоимость найма, воронка подбора, отчётность для руководства.</div>
+            <div class="item"><b>ИИ-инструменты для автоматизации</b> — обработка данных, генерация отчётов и дашбордов с помощью нейросетей.</div>
+            <div class="item"><b>Практика на реальных процессах</b> — построение аналитики для конкретного предприятия-партнёра.</div>
+            <div class="item"><b>Сопровождение трудоустройства</b> — стажировка и выход на позицию HR- или процессного аналитика.</div>
+          </div>
+        </section>
+
+        <section class="section" style="margin-top:8px;">
+          <h2>Что получает участница</h2>
+          <div class="stats">
+            <div class="stat"><b>Профессия</b>HR-аналитик с ИИ-инструментами</div>
+            <div class="stat"><b>Дашборд</b>Реальный проект в портфолио</div>
+            <div class="stat"><b>Стажировка</b>Практика на предприятии региона</div>
+            <div class="stat"><b>Трудоустройство</b>Сопровождение выхода на позицию</div>
+          </div>
+        </section>
+      </div>
+
+      <div>
+        <div class="social-block">
+          <div class="eyebrow2">Социальная роль проекта</div>
+          <h2>Больше выбора, чем «продавщица в магазине»</h2>
+          <p>Мы не заменяем работодателю требование нанимать по признаку пола — мы расширяем выбор. Во многих малых городах и посёлках у женщины часто есть только вариант «продавец» или «касса». Программа даёт третий путь — цифровую профессию, которую можно совмещать с семьёй и делать удалённо, с оплатой выше типового сервисного труда. Это не благотворительность, а подготовка кадрового ресурса, которого сегодня не хватает бизнесу и региону.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-block">
+      <div class="eyebrow2">Формат участия в бизнес- и государственных форумах</div>
+      <h2>Проектная сессия: как HR-аналитика повышает операционную эффективность бизнеса</h2>
+      <div class="demo-lead">Проводим на площадке форума проектную сессию на живом кейсе HR-процессов: показываем, как аналитика и ИИ снижают издержки, текучесть и время закрытия вакансий — и предлагаем двум аудиториям конкретный следующий шаг.</div>
+      <div class="forum-grid">
+        <div class="forum-col">
+          <div class="ftag">Для руководителей бизнеса</div>
+          <p>Предлагаем организовать бесплатное обучение для сотрудников и соискательниц, готовых работать — на примере аналитики HR-процессов показываем измеримый рост операционной эффективности.</p>
+        </div>
+        <div class="forum-col">
+          <div class="ftag">Для руководителей регионов</div>
+          <p>Предлагаем внедрить обучение в федеральных центрах занятости и организациях ДПО, участвующих в проектах развития занятости и новых профессий.</p>
+        </div>
+      </div>
+    </div>
+
+    <section class="section" style="margin-top:6mm;">
+      <h2>Почему это интересно организаторам больших форумов</h2>
+      <div class="list">
+        <div class="item"><b>Соединяет социальную и экономическую повестку.</b> Не только женская занятость, но и измеримый рост эффективности бизнеса — на конкретном кейсе HR-аналитики.</div>
+        <div class="item"><b>Даёт форуму практический кейс, а не декларацию.</b> Проектная сессия с конкретными цифрами по HR-процессам вместо очередной панельной дискуссии.</div>
+        <div class="item"><b>Тиражируется через существующую инфраструктуру.</b> Центры занятости и институты ДПО уже встроены в систему — дополнительная инфраструктура не нужна.</div>
+        <div class="item"><b>Отвечает сразу на несколько федеральных приоритетов.</b> Женская занятость, новые профессии, цифровизация, кадровая устойчивость бизнеса.</div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="small">
+        <strong>Статусный и практический продукт</strong><br>
+        Соединяет обучение новой профессии, применение ИИ в HR-процессах и измеримую пользу для бизнеса — после презентации у организатора остаётся понятный следующий шаг: проектная сессия на площадке форума.
+      </div>
+      <div class="contacts">
+        <b>Контакты:</b><br>
+        <a href="https://bureau.radarexec.ru">bureau.radarexec.ru</a><br>
+        <a href="https://hr.radarexec.ru">hr.radarexec.ru</a><br>
+        <a href="mailto:prof@jgordeeva.ru">prof@jgordeeva.ru</a><br>
+        <a href="tel:+79166374986">+7 916 637-49-86</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
