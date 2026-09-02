@@ -4,6 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HR-партнер нового контура — программа подготовки HR 2026</title>
+<meta name="description" content="Практическая программа для HRD и HRBP: трансформация HR-функции через процессы, данные, автоматизацию и knowledge management. Выездная лаборатория и онлайн-формат.">
+<meta name="keywords" content="HR программа, HRBP, HRD, HR-аналитика, автоматизация HR, knowledge management, корпоративное обучение HR">
+<meta property="og:title" content="HR-партнер нового контура — программа подготовки HR 2026">
+<meta property="og:description" content="Практическая программа по трансформации HR-функции: процессы, данные, технологии и знания для решения новых задач бизнеса.">
+<meta property="og:url" content="https://hr.radarexec.ru/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://hr.radarexec.ru/">
+<link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/images/favicon.svg">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap');
 
@@ -41,7 +52,84 @@
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
   }
-  .nav-logo { font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); }
+
+  .nav-logo {
+    display: inline-flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--ink);
+    font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  }
+  .nav-logo img { width: 28px; height: 28px; border-radius: 6px; display: block; }
+  .nav-links a.is-active { color: var(--accent); }
+  .btn-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 14px; font-weight: 600; color: var(--accent);
+    text-decoration: none; padding: 8px 0;
+    border-bottom: 1.5px solid transparent;
+    transition: border-color .2s, color .2s;
+  }
+  .btn-link:hover { border-bottom-color: var(--accent); color: var(--accent-light); }
+  .btn-link--light { color: var(--gold); }
+  .btn-link--light:hover { color: #E6C56A; border-bottom-color: #E6C56A; }
+  .formats-extra {
+    margin-top: 28px;
+    display: flex; flex-wrap: wrap; gap: 16px 28px;
+    align-items: center;
+  }
+  .doc-note {
+    margin-top: 32px; max-width: 720px;
+    padding: 20px 24px; border-radius: 4px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+  .doc-note h4 { font-size: 15px; color: var(--gold); margin-bottom: 8px; }
+  .doc-note p { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.6; margin: 0; }
+  .audience-tracks { display: flex; flex-direction: column; gap: 20px; margin-top: 8px; }
+  .audience-track {
+    padding: 20px 22px; border: 1px solid var(--border); border-radius: 4px;
+    background: var(--white);
+  }
+  .audience-track h4 {
+    font-size: 14px; font-weight: 700; color: var(--accent);
+    letter-spacing: .04em; text-transform: uppercase; margin-bottom: 12px;
+  }
+  .audience-track .audience-list { margin-top: 0; }
+  .trust-section { background: var(--mist); }
+  .trust-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    margin-top: 8px;
+  }
+  .trust-item {
+    background: var(--white); border-radius: 4px; padding: 22px 20px;
+    border-top: 3px solid var(--accent);
+  }
+  .trust-item h4 { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+  .trust-item p { font-size: 13px; color: var(--slate); line-height: 1.55; margin: 0; }
+  .back-to-top {
+    position: fixed; right: 24px; bottom: 24px; z-index: 90;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--ink); color: var(--white);
+    border: none; cursor: pointer;
+    font-size: 18px; line-height: 1;
+    box-shadow: 0 8px 24px rgba(26,26,46,0.2);
+    opacity: 0; pointer-events: none; transition: opacity .2s, background .2s;
+  }
+  .back-to-top.is-visible { opacity: 1; pointer-events: auto; }
+  .back-to-top:hover { background: var(--accent); }
+  .lead-form select {
+    width: 100%;
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    padding: 14px 16px;
+    border: 1.5px solid var(--border);
+    border-radius: 2px;
+    color: var(--ink);
+    background: var(--white);
+  }
+  .lead-form select:focus { outline: none; border-color: var(--accent); }
+  @media (max-width: 900px) {
+    .trust-grid { grid-template-columns: 1fr; }
+    .nav-logo span { font-size: 11px; }
+  }
   .nav-links { display: flex; gap: 32px; list-style: none; }
   .nav-links a { font-size: 13px; font-weight: 500; text-decoration: none; color: var(--slate); transition: color .2s; }
   .nav-links a:hover { color: var(--accent); }
@@ -844,14 +932,15 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">HR — Новый Контур</div>
+  <a href="#top" class="nav-logo" aria-label="HR — Новый Контур, наверх">
+    <img src="assets/images/favicon.svg" alt="" width="28" height="28">
+    <span>HR — Новый Контур</span>
+  </a>
   <ul class="nav-links">
-    <li><a href="#problem">Проблема</a></li>
     <li><a href="#program">Программа</a></li>
     <li><a href="#formats">Форматы</a></li>
     <li><a href="#artifacts">Результаты</a></li>
     <li><a href="#audience">Для кого</a></li>
-    <li><a href="#mission">Миссия</a></li>
     <li><a href="#experts">Команда</a></li>
   </ul>
   <div class="nav-actions">
@@ -860,19 +949,19 @@
       <span class="lang-switch__sep">|</span>
       <a href="en/index.html" class="lang-switch__link" hreflang="en">EN</a>
     </div>
-    <a href="mailto:prof@jgordeeva.ru?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20radarexec.ru" class="nav-cta" title="Откроется ваша почтовая программа с готовым письмом">Оставить заявку</a>
+    <a href="#contact" class="nav-cta">Обсудить программу</a>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="top">
   <div class="hero-left">
-    <div class="hero-eyebrow">Программа подготовки HR-директоров и HR-бизнес-партнёров · 2026</div>
-    <h1>HR-партнер<br><em>нового</em><br>контура</h1>
-    <p class="hero-sub">Автоматизация, импортозамещение HR-сервисов, knowledge management, ESG, инклюзия и интеграция вернувшихся с СВО. Переход от кадрового оформления к управленческой архитектуре.</p>
+    <div class="hero-eyebrow">Программа для HR-директоров и HR-бизнес-партнёров · 2026</div>
+    <h1>HR нового контура:<br>от кадровой функции<br>к <em>управлению бизнесом</em></h1>
+    <p class="hero-sub">Практическая программа по трансформации HR-функции: управление процессами, данными, технологиями и знаниями для решения новых задач бизнеса.</p>
     <div class="hero-ctas">
-      <a href="#formats" class="btn-primary">Выбрать формат</a>
-      <a href="#program" class="btn-outline">Подробнее о программе</a>
+      <a href="#contact" class="btn-primary">Обсудить программу</a>
+      <a href="#program" class="btn-outline">Смотреть программу</a>
     </div>
     <div class="hero-author">
       <img src="assets/images/gordeeva.jpg" alt="Юлия Гордеева — автор программы" class="hero-author-photo">
@@ -981,8 +1070,8 @@
     </div>
   </div>
   <div class="section-cta">
-    <a href="mailto:prof@jgordeeva.ru?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20radarexec.ru" class="btn-primary">Обсудить задачу</a>
-    <a href="#formats" class="btn-secondary-light">Смотреть форматы программы</a>
+    <a href="#contact" class="btn-primary">Обсудить программу</a>
+    <a href="#formats" class="btn-secondary-light">Смотреть программу</a>
     <p class="mailto-hint">Нажатие откроет вашу почтовую программу с готовым письмом.</p>
   </div>
 </section>
@@ -1077,9 +1166,118 @@
     </div>
   </div>
   <div class="section-cta">
-    <a href="#formats" class="btn-primary">Выбрать формат обучения</a>
-    <a href="mailto:prof@jgordeeva.ru?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20radarexec.ru" class="btn-secondary-light">Оставить заявку</a>
-    <p class="mailto-hint">Нажатие откроет вашу почтовую программу с готовым письмом.</p>
+    <a href="#formats" class="btn-primary">Смотреть форматы</a>
+    <a href="#contact" class="btn-secondary-light">Обсудить программу</a>
+  </div>
+</section>
+
+<!-- ARTIFACTS -->
+<section class="artifacts" id="artifacts">
+  <div class="section-label">Бизнес-результаты</div>
+  <h2>Что получает компания<br>на выходе</h2>
+  <p class="lead">Не красивые презентации — конкретные артефакты, которые сразу начинают работать.</p>
+
+  <div class="artifacts-grid">
+    <div class="artifact-card">
+      <div class="icon">📊</div>
+      <h4>Прототип HR-дашборда</h4>
+      <p>Настроенные метрики для принятия управленческих решений: текучесть, удержание, адаптация, стоимость найма.</p>
+    </div>
+    <div class="artifact-card">
+      <div class="icon">📋</div>
+      <h4>Мини-ТЗ на автоматизацию</h4>
+      <p>Готовые спецификации для замены или пересборки HR-сервисов без саботажа и хаоса.</p>
+    </div>
+    <div class="artifact-card">
+      <div class="icon">🗄️</div>
+      <h4>Архитектура базы знаний</h4>
+      <p>Готовая структура, план запуска и передача корпоративной экспертизы в управляемый формат.</p>
+    </div>
+    <div class="artifact-card">
+      <div class="icon">🛤️</div>
+      <h4>Маршрут интеграции СВО</h4>
+      <p>Регламент адаптации новых категорий сотрудников. Социальная ответственность как HR-продукт.</p>
+    </div>
+    <div class="artifact-card">
+      <div class="icon">🏷️</div>
+      <h4>Паспорт ESG-проекта</h4>
+      <p>Пошаговый план трансформации HR-функции с учётом социальных, кадровых и репутационных метрик.</p>
+    </div>
+    <div class="artifact-card">
+      <div class="icon">🏛️</div>
+      <h4>Паспорт GR-проекта <span class="artifact-tag">онлайн-программа</span></h4>
+      <p>Стратегия взаимодействия с органами власти: центры занятости, программы господдержки, кадровая отчётность.</p>
+    </div>
+    <div class="artifact-card">
+      <div class="icon">🎓</div>
+      <h4>Система наставничества</h4>
+      <p>Работающая модель передачи экспертизы «лидеры учат лидеров» и профессиональная дорожная карта роста сотрудника внутри компании.</p>
+    </div>
+    <div class="artifact-card">
+      <div class="icon">🗺️</div>
+      <h4>Дорожная карта на 90 дней</h4>
+      <p>Конкретный план изменений с защитой перед руководством: что, зачем, сколько стоит, какой эффект.</p>
+    </div>
+  </div>
+  <div class="artifacts-dashboard">
+    <div class="dashboard-mock" role="img" aria-label="Пример прототипа HR-дашборда: текучесть, удержание, стоимость найма, вовлечённость">
+      <div class="dashboard-mock__topbar">
+        <div class="dashboard-mock__title">HR Dashboard</div>
+        <div class="dashboard-mock__period">Q1 2026 · для руководства</div>
+      </div>
+      <div class="dashboard-mock__body">
+        <div class="dashboard-mock__kpis">
+          <div class="dashboard-mock__kpi">
+            <div class="dashboard-mock__kpi-label">Текучесть</div>
+            <div class="dashboard-mock__kpi-value">14%</div>
+            <div class="dashboard-mock__kpi-delta dashboard-mock__kpi-delta--down">▼ 2 п.п.</div>
+          </div>
+          <div class="dashboard-mock__kpi">
+            <div class="dashboard-mock__kpi-label">Удержание</div>
+            <div class="dashboard-mock__kpi-value">86%</div>
+            <div class="dashboard-mock__kpi-delta dashboard-mock__kpi-delta--up">▲ 4 п.п.</div>
+          </div>
+          <div class="dashboard-mock__kpi">
+            <div class="dashboard-mock__kpi-label">Стоимость найма</div>
+            <div class="dashboard-mock__kpi-value">42К</div>
+            <div class="dashboard-mock__kpi-delta dashboard-mock__kpi-delta--down">▼ 8%</div>
+          </div>
+          <div class="dashboard-mock__kpi">
+            <div class="dashboard-mock__kpi-label">Вовлечённость</div>
+            <div class="dashboard-mock__kpi-value">71</div>
+            <div class="dashboard-mock__kpi-delta dashboard-mock__kpi-delta--up">▲ 6 п.</div>
+          </div>
+        </div>
+        <div class="dashboard-mock__charts">
+          <div class="dashboard-mock__panel">
+            <div class="dashboard-mock__panel-title">Динамика текучести по месяцам</div>
+            <svg viewBox="0 0 360 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <line x1="30" y1="100" x2="340" y2="100" stroke="#D8D4CC" stroke-width="1"/>
+              <polyline points="30,72 90,65 150,58 210,52 270,48 330,44" fill="none" stroke="#C84B31" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="330" cy="44" r="4" fill="#C84B31"/>
+              <text x="30" y="115" font-family="Manrope,sans-serif" font-size="9" fill="#4A5568">Янв</text>
+              <text x="150" y="115" font-family="Manrope,sans-serif" font-size="9" fill="#4A5568">Мар</text>
+              <text x="300" y="115" font-family="Manrope,sans-serif" font-size="9" fill="#4A5568">Июн</text>
+            </svg>
+          </div>
+          <div class="dashboard-mock__panel">
+            <div class="dashboard-mock__panel-title">Воронка найма</div>
+            <svg viewBox="0 0 240 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="20" y="18" width="200" height="14" rx="2" fill="#1A1A2E" opacity="0.85"/>
+              <rect x="40" y="40" width="160" height="14" rx="2" fill="#C84B31" opacity="0.75"/>
+              <rect x="60" y="62" width="120" height="14" rx="2" fill="#D4A843" opacity="0.85"/>
+              <rect x="80" y="84" width="80" height="14" rx="2" fill="#6B8F71" opacity="0.9"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="artifacts-dashboard__caption">Пример прототипа HR-дашборда — один из артефактов программы</p>
+  </div>
+
+  <div class="section-cta">
+    <a href="#contact" class="btn-primary">Обсудить программу</a>
+    <a href="#formats" class="btn-secondary-light">Смотреть форматы</a>
   </div>
 </section>
 
@@ -1235,122 +1433,11 @@
   </div>
 
   <div class="section-cta section-cta--center">
-    <a href="mailto:prof@jgordeeva.ru?subject=%D0%97%D0%B0%D1%8F%D0%B2%D0%BA%D0%B0%20%D0%BD%D0%B0%20%D0%B2%D1%8B%D0%B5%D0%B7%D0%B4%D0%BD%D1%83%D1%8E%20%D0%BB%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%B8%D1%8E" class="btn-primary">Заявка на выездную лабораторию</a>
-    <a href="inclusive-lab.html" class="btn-outline">Клиентская страница: лаборатория инклюзивных пространств</a>
-    <a href="mailto:ladlena_k@mail.ru?subject=%D0%9E%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0%20%E2%80%94%202%2C5%20%D0%BC%D0%B5%D1%81%D1%8F%D1%86%D0%B0" class="btn-outline">Онлайн-программа — 2,5 месяца</a>
-    <a href="mailto:prof@jgordeeva.ru?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20radarexec.ru" class="btn-outline">Оставить заявку</a>
-    <p class="mailto-hint mailto-hint--light">Кнопки заявки откроют вашу почтовую программу с готовым письмом.</p>
+    <a href="#contact" class="btn-primary">Обсудить программу</a>
+    <a href="#program" class="btn-outline">Смотреть программу</a>
   </div>
-</section>
-
-<!-- ARTIFACTS -->
-<section class="artifacts" id="artifacts">
-  <div class="section-label">Бизнес-результаты</div>
-  <h2>Что получает компания<br>на выходе</h2>
-  <p class="lead">Не красивые презентации — конкретные артефакты, которые сразу начинают работать.</p>
-
-  <div class="artifacts-dashboard">
-    <div class="dashboard-mock" role="img" aria-label="Пример прототипа HR-дашборда: текучесть, удержание, стоимость найма, вовлечённость">
-      <div class="dashboard-mock__topbar">
-        <div class="dashboard-mock__title">HR Dashboard</div>
-        <div class="dashboard-mock__period">Q1 2026 · для руководства</div>
-      </div>
-      <div class="dashboard-mock__body">
-        <div class="dashboard-mock__kpis">
-          <div class="dashboard-mock__kpi">
-            <div class="dashboard-mock__kpi-label">Текучесть</div>
-            <div class="dashboard-mock__kpi-value">14%</div>
-            <div class="dashboard-mock__kpi-delta dashboard-mock__kpi-delta--down">▼ 2 п.п.</div>
-          </div>
-          <div class="dashboard-mock__kpi">
-            <div class="dashboard-mock__kpi-label">Удержание</div>
-            <div class="dashboard-mock__kpi-value">86%</div>
-            <div class="dashboard-mock__kpi-delta dashboard-mock__kpi-delta--up">▲ 4 п.п.</div>
-          </div>
-          <div class="dashboard-mock__kpi">
-            <div class="dashboard-mock__kpi-label">Стоимость найма</div>
-            <div class="dashboard-mock__kpi-value">42К</div>
-            <div class="dashboard-mock__kpi-delta dashboard-mock__kpi-delta--down">▼ 8%</div>
-          </div>
-          <div class="dashboard-mock__kpi">
-            <div class="dashboard-mock__kpi-label">Вовлечённость</div>
-            <div class="dashboard-mock__kpi-value">71</div>
-            <div class="dashboard-mock__kpi-delta dashboard-mock__kpi-delta--up">▲ 6 п.</div>
-          </div>
-        </div>
-        <div class="dashboard-mock__charts">
-          <div class="dashboard-mock__panel">
-            <div class="dashboard-mock__panel-title">Динамика текучести по месяцам</div>
-            <svg viewBox="0 0 360 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <line x1="30" y1="100" x2="340" y2="100" stroke="#D8D4CC" stroke-width="1"/>
-              <polyline points="30,72 90,65 150,58 210,52 270,48 330,44" fill="none" stroke="#C84B31" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="330" cy="44" r="4" fill="#C84B31"/>
-              <text x="30" y="115" font-family="Manrope,sans-serif" font-size="9" fill="#4A5568">Янв</text>
-              <text x="150" y="115" font-family="Manrope,sans-serif" font-size="9" fill="#4A5568">Мар</text>
-              <text x="300" y="115" font-family="Manrope,sans-serif" font-size="9" fill="#4A5568">Июн</text>
-            </svg>
-          </div>
-          <div class="dashboard-mock__panel">
-            <div class="dashboard-mock__panel-title">Воронка найма</div>
-            <svg viewBox="0 0 240 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="20" y="18" width="200" height="14" rx="2" fill="#1A1A2E" opacity="0.85"/>
-              <rect x="40" y="40" width="160" height="14" rx="2" fill="#C84B31" opacity="0.75"/>
-              <rect x="60" y="62" width="120" height="14" rx="2" fill="#D4A843" opacity="0.85"/>
-              <rect x="80" y="84" width="80" height="14" rx="2" fill="#6B8F71" opacity="0.9"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-    <p class="artifacts-dashboard__caption">Пример прототипа HR-дашборда — один из артефактов программы</p>
-  </div>
-
-  <div class="artifacts-grid">
-    <div class="artifact-card">
-      <div class="icon">📊</div>
-      <h4>Прототип HR-дашборда</h4>
-      <p>Настроенные метрики для принятия управленческих решений: текучесть, удержание, адаптация, стоимость найма.</p>
-    </div>
-    <div class="artifact-card">
-      <div class="icon">📋</div>
-      <h4>Мини-ТЗ на автоматизацию</h4>
-      <p>Готовые спецификации для замены или пересборки HR-сервисов без саботажа и хаоса.</p>
-    </div>
-    <div class="artifact-card">
-      <div class="icon">🗄️</div>
-      <h4>Архитектура базы знаний</h4>
-      <p>Готовая структура, план запуска и передача корпоративной экспертизы в управляемый формат.</p>
-    </div>
-    <div class="artifact-card">
-      <div class="icon">🛤️</div>
-      <h4>Маршрут интеграции СВО</h4>
-      <p>Регламент адаптации новых категорий сотрудников. Социальная ответственность как HR-продукт.</p>
-    </div>
-    <div class="artifact-card">
-      <div class="icon">🏷️</div>
-      <h4>Паспорт ESG-проекта</h4>
-      <p>Пошаговый план трансформации HR-функции с учётом социальных, кадровых и репутационных метрик.</p>
-    </div>
-    <div class="artifact-card">
-      <div class="icon">🏛️</div>
-      <h4>Паспорт GR-проекта <span class="artifact-tag">онлайн-программа</span></h4>
-      <p>Стратегия взаимодействия с органами власти: центры занятости, программы господдержки, кадровая отчётность.</p>
-    </div>
-    <div class="artifact-card">
-      <div class="icon">🎓</div>
-      <h4>Система наставничества</h4>
-      <p>Работающая модель передачи экспертизы «лидеры учат лидеров» и профессиональная дорожная карта роста сотрудника внутри компании.</p>
-    </div>
-    <div class="artifact-card">
-      <div class="icon">🗺️</div>
-      <h4>Дорожная карта на 90 дней</h4>
-      <p>Конкретный план изменений с защитой перед руководством: что, зачем, сколько стоит, какой эффект.</p>
-    </div>
-  </div>
-  <div class="section-cta">
-    <a href="mailto:prof@jgordeeva.ru?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20radarexec.ru" class="btn-primary">Получить такие результаты</a>
-    <a href="#formats" class="btn-secondary-light">Узнать, как это работает</a>
-    <p class="mailto-hint">Нажатие откроет вашу почтовую программу с готовым письмом.</p>
+  <div class="formats-extra">
+    <a href="inclusive-lab.html" class="btn-link btn-link--light" target="_blank" rel="noopener">Подробнее о лаборатории инклюзивных пространств ↗</a>
   </div>
 </section>
 
@@ -1367,24 +1454,38 @@
       </figure>
     </div>
     <div>
-      <div class="audience-list">
-        <div class="audience-item"><span>Корпоративные HR-команды</span></div>
-        <div class="audience-item"><span>HRD и руководители HR-направлений</span></div>
-        <div class="audience-item"><span>HR Business Partner</span></div>
-        <div class="audience-item"><span>Специалисты центров занятости</span></div>
-        <div class="audience-item"><span>Региональные команды по работе с работодателями</span></div>
-        <div class="audience-item"><span>Корпоративные университеты</span></div>
-        <div class="audience-item"><span>Проектные команды по инклюзии и интеграции</span></div>
-        <div class="audience-item"><span>Работодатели, которым нужно быстро усилить HR-функцию</span></div>
-        <div class="audience-item"><span>Женщины в регионах, ищущие смену профессии</span></div>
-        <div class="audience-item"><span>Соискатели без опыта в HR, готовые войти в профессию через аналитику и цифровые инструменты</span></div>
+      <div class="audience-tracks">
+        <div class="audience-track">
+          <h4>Корпоративные клиенты</h4>
+          <div class="audience-list">
+            <div class="audience-item"><span>Корпоративные HR-команды</span></div>
+            <div class="audience-item"><span>Работодатели, которым нужно быстро усилить HR-функцию</span></div>
+            <div class="audience-item"><span>Корпоративные университеты</span></div>
+            <div class="audience-item"><span>Проектные команды по инклюзии и интеграции</span></div>
+          </div>
+        </div>
+        <div class="audience-track">
+          <h4>Действующие HR-профессионалы</h4>
+          <div class="audience-list">
+            <div class="audience-item"><span>HRD и руководители HR-направлений</span></div>
+            <div class="audience-item"><span>HR Business Partner</span></div>
+          </div>
+        </div>
+        <div class="audience-track">
+          <h4>Региональные и стартовые маршруты</h4>
+          <div class="audience-list">
+            <div class="audience-item"><span>Специалисты центров занятости</span></div>
+            <div class="audience-item"><span>Региональные команды по работе с работодателями</span></div>
+            <div class="audience-item"><span>Женщины в регионах, ищущие смену профессии</span></div>
+            <div class="audience-item"><span>Соискатели без опыта в HR, готовые войти через аналитику и цифровые инструменты</span></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <div class="section-cta">
-    <a href="mailto:prof@jgordeeva.ru?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20radarexec.ru" class="btn-primary">Подходит ли мне программа?</a>
+    <a href="#contact" class="btn-primary">Обсудить программу</a>
     <a href="#mission" class="btn-secondary-light">Программа для регионов</a>
-    <p class="mailto-hint">Нажатие откроет вашу почтовую программу с готовым письмом.</p>
   </div>
 </section>
 
@@ -1414,10 +1515,45 @@
   <p class="mission-closing">Наша социальная миссия — расширить горизонт выбора профессии для женщин в регионах России.</p>
   <p class="mission-bridge">Команда проекта уже имеет практический опыт карьерной поддержки уязвимых групп — от партнёрств с центрами занятости до карьерных интенсивов для слушателей с ОВЗ. <a href="#expert-lada">Подробнее о команде →</a></p>
   <div class="section-cta">
-    <a href="hr-analytics-women.html" class="btn-primary">Клиентская страница: HR-аналитика с ИИ для регионов</a>
-    <a href="mailto:prof@jgordeeva.ru?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20radarexec.ru" class="btn-outline">Узнать о программе для регионов</a>
+    <a href="#contact" class="btn-primary">Обсудить программу</a>
     <a href="#experts" class="btn-outline">Познакомиться с командой</a>
-    <p class="mailto-hint mailto-hint--light">Нажатие откроет вашу почтовую программу с готовым письмом.</p>
+  </div>
+  <div class="formats-extra">
+    <a href="hr-analytics-women.html" class="btn-link btn-link--light" target="_blank" rel="noopener">Подробнее о программе HR-аналитики с ИИ для регионов ↗</a>
+  </div>
+</section>
+
+
+<!-- TRUST -->
+<section class="trust-section" id="partners">
+  <div class="section-label">Партнёры и площадки</div>
+  <h2>Работали с / преподавали в / реализовывали проекты для</h2>
+  <p class="lead">Команда опирается на практику в бизнес-образовании, госсекторе и корпоративных программах — не на абстрактную методологию.</p>
+  <div class="trust-grid">
+    <div class="trust-item">
+      <h4>Президентская программа · MBA РЭУ им. Г.В. Плеханова</h4>
+      <p>Преподавание HR и организационного поведения (2008–2022).</p>
+    </div>
+    <div class="trust-item">
+      <h4>РАНХиГС · РУДН · Финансовый университет</h4>
+      <p>Авторские корпоративные программы для бизнеса и управленческих команд.</p>
+    </div>
+    <div class="trust-item">
+      <h4>Центр занятости населения Москвы</h4>
+      <p>Партнёрства, ярмарки вакансий и карьерные интенсивы для слушателей с ОВЗ.</p>
+    </div>
+    <div class="trust-item">
+      <h4>GenerationS / РВК и госконтракты</h4>
+      <p>Реализованные образовательные и проектные контракты на сумму более 24 млн руб.</p>
+    </div>
+    <div class="trust-item">
+      <h4>АНО ДПО «Московская Бизнес Академия»</h4>
+      <p>Портфель из 150+ программ MBA и профпереподготовки.</p>
+    </div>
+    <div class="trust-item">
+      <h4>«Лучшие практики управленческого образования 2024»</h4>
+      <p>Победа во Всероссийском конкурсе бизнес-школ.</p>
+    </div>
   </div>
 </section>
 
@@ -1476,9 +1612,8 @@
     </article>
   </div>
   <div class="section-cta section-cta--center">
-    <a href="mailto:prof@jgordeeva.ru?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20radarexec.ru" class="btn-primary">Связаться с командой</a>
-    <a href="#formats" class="btn-secondary-light">Выбрать формат программы</a>
-    <p class="mailto-hint">Нажатие откроет вашу почтовую программу с готовым письмом.</p>
+    <a href="#contact" class="btn-primary">Обсудить программу</a>
+    <a href="#formats" class="btn-secondary-light">Смотреть форматы</a>
   </div>
 </section>
 
@@ -1493,8 +1628,7 @@
       <div class="quote-attribution">— Юлия Гордеева, автор программы</div>
       <p class="quote-tagline">Эта компетенция нужна не завтра. Она нужна уже сейчас.</p>
       <div class="section-cta">
-        <a href="mailto:prof@jgordeeva.ru?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20radarexec.ru" class="btn-primary">Начать трансформацию HR</a>
-        <p class="mailto-hint mailto-hint--light">Нажатие откроет вашу почтовую программу с готовым письмом.</p>
+        <a href="#contact" class="btn-primary">Обсудить программу</a>
       </div>
     </div>
   </div>
@@ -1503,21 +1637,26 @@
 <!-- CTA -->
 <section class="cta-section" id="contact">
   <div class="section-label" style="text-align: center;">Следующий шаг</div>
-  <h2>Растите архитекторов<br>HR-функции внутри компании</h2>
-  <p class="lead">Выберите формат: выездная лаборатория для быстрой трансформации или онлайн-программа для глубокой перестройки компетенций.</p>
+  <h2>Оставьте контакты — поможем выбрать формат</h2>
+  <p class="lead">Короткая заявка: имя, компания и удобный способ связи. Подскажем, что подойдёт лучше — выездная лаборатория или онлайн-программа.</p>
 
-  <div class="cta-group" style="margin-bottom: 40px;">
-    <a href="mailto:prof@jgordeeva.ru?subject=%D0%97%D0%B0%D1%8F%D0%B2%D0%BA%D0%B0%20%D0%BD%D0%B0%20%D0%B2%D1%8B%D0%B5%D0%B7%D0%B4%D0%BD%D1%83%D1%8E%20%D0%BB%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%B8%D1%8E" class="btn-primary">Заявка на выездную лабораторию</a>
-    <a href="mailto:ladlena_k@mail.ru?subject=%D0%9E%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0%20%E2%80%94%202%2C5%20%D0%BC%D0%B5%D1%81%D1%8F%D1%86%D0%B0" class="btn-dark">Онлайн-программа — 2,5 месяца</a>
-    <p class="mailto-hint" style="text-align:center;">Кнопки заявки откроют вашу почтовую программу с готовым письмом.</p>
-  </div>
-
-  <div class="lead-form" style="text-align:center;">
-    <a href="mailto:prof@jgordeeva.ru?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20radarexec.ru" class="btn-primary" style="width:100%;">Оставить заявку</a>
-    <p id="mailto-hint" style="display:block;margin-top:16px;">
-      Сейчас откроется ваша почтовая программа с готовым письмом — нажмите «Отправить», чтобы мы получили заявку.
-    </p>
-  </div>
+  <form class="lead-form" id="lead-form" action="#" method="post">
+    <input type="text" name="name" id="lead-name" placeholder="Имя" required autocomplete="name">
+    <input type="text" name="company" id="lead-company" placeholder="Компания" required autocomplete="organization">
+    <input type="text" name="contact" id="lead-contact" placeholder="Телефон или Telegram" required autocomplete="tel">
+    <select name="format" id="lead-format" required>
+      <option value="" disabled selected>Формат интереса</option>
+      <option value="lab">Выездная лаборатория</option>
+      <option value="online">Онлайн-программа</option>
+      <option value="unsure">Пока не определились</option>
+    </select>
+    <label>
+      <input type="checkbox" name="consent" required>
+      Согласен(на) на <a href="consent.html" target="_blank" rel="noopener">обработку персональных данных</a>
+    </label>
+    <button type="submit">Обсудить программу</button>
+    <p class="mailto-hint" style="text-align:left;margin-top:8px;">После отправки откроется почтовая программа с готовым письмом — нажмите «Отправить».</p>
+  </form>
 </section>
 
 <!-- FOOTER -->
@@ -1533,13 +1672,68 @@
   </div>
 </footer>
 
+<button class="back-to-top" id="back-to-top" type="button" aria-label="Наверх">↑</button>
+
 <script>
   function switchTab(tabId) {
     document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
     document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
     document.getElementById('tab-' + tabId).classList.add('active');
-    event.target.classList.add('active');
+    if (typeof event !== 'undefined' && event && event.target) event.target.classList.add('active');
   }
+
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
+    var sections = links.map(function (a) {
+      return document.querySelector(a.getAttribute('href'));
+    }).filter(Boolean);
+
+    function setActive() {
+      var y = window.scrollY + 120;
+      var current = sections[0];
+      sections.forEach(function (sec) {
+        if (sec.offsetTop <= y) current = sec;
+      });
+      links.forEach(function (a) {
+        a.classList.toggle('is-active', current && a.getAttribute('href') === '#' + current.id);
+      });
+      var topBtn = document.getElementById('back-to-top');
+      if (topBtn) topBtn.classList.toggle('is-visible', window.scrollY > window.innerHeight * 1.2);
+    }
+    window.addEventListener('scroll', setActive, { passive: true });
+    setActive();
+
+    var topBtn = document.getElementById('back-to-top');
+    if (topBtn) topBtn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    var form = document.getElementById('lead-form');
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name = document.getElementById('lead-name').value.trim();
+        var company = document.getElementById('lead-company').value.trim();
+        var contact = document.getElementById('lead-contact').value.trim();
+        var formatEl = document.getElementById('lead-format');
+        var format = formatEl.options[formatEl.selectedIndex].text;
+        var body = [
+          'Здравствуйте!',
+          '',
+          'Заявка с сайта hr.radarexec.ru',
+          'Имя: ' + name,
+          'Компания: ' + company,
+          'Контакт: ' + contact,
+          'Формат интереса: ' + format
+        ].join('\n');
+        var mailto = 'mailto:prof@jgordeeva.ru'
+          + '?subject=' + encodeURIComponent('Запрос с сайта hr.radarexec.ru')
+          + '&body=' + encodeURIComponent(body);
+        window.location.href = mailto;
+      });
+    }
+  })();
 </script>
+<script src="assets/js/cookie-metrika.js" defer></script>
 </body>
 </html>
